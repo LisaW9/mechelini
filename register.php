@@ -1,13 +1,24 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Register</title>
-</head>
-<body>
+<link rel="stylesheet" type="text/css" href="css/reset.css">
+<link rel="stylesheet" type="text/css" href="css/main_style.css">
+<link rel="stylesheet" type="text/css" href="css/login.css">
 
-</body>
-</html>
+<div id="container">
+    <form action="">
+        <label for="firstName">VOORNAAM</label>
+        <input type="text" class="input" id="firstName" name="firstName">
+
+        <label for="lastName">NAAM</label>
+        <input type="text" class="input" id="lastName" name="lastName">
+
+        <label for="email">E-MAIL</label>
+        <input type="text" class="input" id="email" name="email">
+
+        <label for="password">WACHTWOORD</label>
+        <input type="password" class="input" id="password" name="password">
+
+        <label for="verifyPassword">WACHTWOORD VERIFIËREN</label>
+        <input type="password" class="input" id="verifyPassword" name="verifyPassword">
+
+        <button class="register">REGISTREREN</button>
+    </form>
+</div>
