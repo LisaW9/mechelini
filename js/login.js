@@ -1,7 +1,3 @@
-
-
-
-
 $(document).ready(function(){
 
     $('.register').on("click", function(event){
@@ -19,4 +15,4 @@ $(document).ready(function(){
 
     })
 
-})
+});
