@@ -1,0 +1,68 @@
+#container{
+    position: fixed;
+    background-color: #D8B251;
+    width: 100%;
+    height: 100vh;
+    padding: 10%;
+    color: white;
+}
+
+.logo{
+    width: 70%;
+    max-width: 300px;
+    display: block;
+    margin: auto;
+
+}
+
+form{
+    margin: auto;
+    margin-top: 50px;
+    font-size: 1em;
+}
+
+form input, form label, form button{
+    width: 100%;
+    font-weight:bold;
+}
+
+.submit, .register{
+    position: absolute;
+    width: 80%;
+    left: 10%;
+    background-color: #CF3C3E;
+    border: none;
+    border-radius: 5px;
+    height: 40px;
+    color: white;
+    font-weight:bold;
+    font-size: 1em;
+    margin-bottom: 10px;
+}
+
+
+.register{
+    margin-top: 60px;
+}
+
+#email, #password{
+    height: 40px;
+    margin: 10px 0;
+    padding-left: 50px;
+    background-size: 40px 40px;
+    background-position: 5px 0;
+    background-repeat: no-repeat;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.5em;
+}
+
+#email{
+    background-image: url('../img/icons/user_icon.svg');
+
+}
+
+#password{
+    background-image: url('../img/icons/password_icon.svg');
+    margin-bottom: 40px;
+}
