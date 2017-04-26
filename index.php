@@ -1,3 +1,30 @@
+<?php
+
+    spl_autoload_register(function ($class) {
+        include_once("classes/" . $class . ".class.php");
+    });
+
+    try {
+        $error = "";
+        if (!empty($_POST)) {
+            $email = $_POST["email"];
+            $password = $_POST["password"];
+
+            $user = new User();
+            $user->setMEmail($email);
+            $user->setMPassword($password);
+
+            if ($user->Login()) {
+                //Start session with email as sessionvariable
+                $user->Login();
+            } else {
+                $error = "Looks like something went wrong";
+            }
+        }
+    } catch (Exception $e) {
+        $error = $e->getMessage();
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +44,7 @@
 
     <div id="container">
         <img class="logo" src="img/icons/logo.svg" alt="logo">
-        <form action="">
+        <form action="" method="post">
             <label for="username">E-MAIL</label>
             <input type="text" id="email" name="email">
 
@@ -26,6 +53,7 @@
 
             <input type="submit" value="INLOGGEN" class="submit">
             <button class="register">REGISTREREN</button>
+            <p><?php echo  $error?></p>
         </form>
     </div>
 
