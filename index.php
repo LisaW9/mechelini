@@ -44,12 +44,18 @@
 
     <div id="container">
         <img class="logo" src="img/icons/logo.svg" alt="logo">
+<<<<<<< HEAD
         <form action="" method="post">
             <label for="username">E-MAIL</label>
             <input type="text" id="email" name="email">
+=======
+        <form action="">
+            <label for="email">E-MAIL</label>
+            <input type="text" class="input" id="email" name="email">
+>>>>>>> origin/master
 
             <label for="password">WACHTWOORD</label>
-            <input type="password" id="password" name="password">
+            <input type="password" class="input" id="password" name="password">
 
             <input type="submit" value="INLOGGEN" class="submit">
             <button class="register">REGISTREREN</button>
