@@ -16,7 +16,7 @@ $( document ).ready(function() {
             opacity: '0'
         });
         setTimeout(function() {
-            window.location.href = "profile.html";
+            window.location.href = "../profile.php";
         }, 2000);
     });
 
@@ -39,7 +39,7 @@ $( document ).ready(function() {
             opacity: '0'
         });
         setTimeout(function() {
-            window.location.href = "profile.html";
+            window.location.href = "../profile.php";
         }, 2000);
     });
 
@@ -61,7 +61,7 @@ $( document ).ready(function() {
             opacity: '0'
         });
         setTimeout(function() {
-            window.location.href = "profile.html";
+            window.location.href = "../profile.php";
         }, 2000);
     });
 
@@ -84,7 +84,7 @@ $( document ).ready(function() {
             opacity: '0'
         });
         setTimeout(function() {
-            window.location.href = "profile.html";
+            window.location.href = "../profile.php";
         }, 2000);
     });
 
@@ -107,7 +107,7 @@ $( document ).ready(function() {
             opacity: '0'
         });
         setTimeout(function() {
-            window.location.href = "profile.html";
+            window.location.href = "../profile.php";
         }, 2000);
     });
 
@@ -130,7 +130,7 @@ $( document ).ready(function() {
             opacity: '0'
         });
         setTimeout(function() {
-            window.location.href = "profile.html";
+            window.location.href = "../profile.php";
         }, 2000);
     });
 });

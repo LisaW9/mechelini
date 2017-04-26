@@ -14,7 +14,7 @@ $(document).ready(function(){
             margin: '0'
         }, 500);
         setTimeout(function () {
-            window.location.href = "home.html";
+            window.location.href = "../home.php";
         }, 500);
 
     })
