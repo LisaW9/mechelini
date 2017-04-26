@@ -69,7 +69,7 @@
 
             foreach ($results as $row) {
                 if (password_verify($this->m_password, $row['password'])) {
-                    header("Location: home.php");
+                    header("Location: index.php");
                     session_start();
                     $_SESSION["id"] = $row["id"];
                     $_SESSION['user'] = $this->m_email;

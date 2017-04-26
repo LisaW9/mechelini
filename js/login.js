@@ -10,7 +10,7 @@ $(document).ready(function(){
             margin: '0'
         }, 500);
         setTimeout(function () {
-            window.location.href = "../home.php";
+            window.location.href = "../index.php";
         }, 500);
 
     })

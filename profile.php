@@ -15,6 +15,6 @@
 </head>
 <body>
     <h1>Dit is een test pagina</h1>
-    <p><a href="home.php">Go back!</a></p>
+    <p><a href="index.php">Go back!</a></p>
 </body>
 </html>
