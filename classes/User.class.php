@@ -3,6 +3,9 @@
     class User{
         private $m_email;
         private $m_password;
+        private $m_firstname;
+        private $m_lastname;
+        private $m_abbonement;
 
         /**
          * @return mixed
@@ -52,6 +55,90 @@
             $this->m_password = $m_password;
         }
 
+        /**
+         * @return mixed
+         */
+        public function getMFirstname()
+        {
+            return $this->m_firstname;
+        }
+
+        /**
+         * @param mixed $m_firstname
+         */
+        public function setMFirstname($m_firstname)
+        {
+            if ($m_firstname=="") {
+                throw new Exception("Name can not be empty");
+            }
+            $this->m_firstname = $m_firstname;
+        }
+
+        /**
+         * @return mixed
+         */
+        public function getMLastname()
+        {
+            return $this->m_lastname;
+        }
+
+        /**
+         * @param mixed $m_lastname
+         */
+        public function setMLastname($m_lastname)
+        {
+            if ($m_lastname=="") {
+                throw new Exception("Lastname can not be empty");
+            }
+            $this->m_lastname = $m_lastname;
+        }
+
+        /**
+         * @return mixed
+         */
+        public function getMAbbonement()
+        {
+            return $this->m_abbonement;
+        }
+
+        /**
+         * @param mixed $m_abbonement
+         */
+        public function setMAbbonement($m_abbonement)
+        {
+            if ($m_abbonement=="") {
+                throw new Exception("Please fill in your abbonement number");
+            }
+            $this->m_abbonement = $m_abbonement;
+        }
+
+        public function Register()
+        {
+            $conn = Db::getInstance();
+
+            $stmnt = $conn->prepare("insert into users (abbo_ID, firstName, lastName, email, password) values (:abbo_ID, :firstName, :lastName, :email, :password)");
+            $stmnt->bindvalue(":abbo_ID", $this->m_abbonement);
+            $stmnt->bindvalue(":firstName", $this->m_firstname);
+            $stmnt->bindvalue(":lastName", $this->m_lastname);
+            $stmnt->bindValue(":email", $this->m_email);
+            $stmnt->bindvalue(":password", $this->m_password);
+            $stmnt->execute();
+            echo "Registered";
+
+            $statement = $conn->prepare("SELECT * FROM users WHERE email = :email ;");
+            $statement->bindValue(":email", $this->m_email);
+            $statement->execute();
+            $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+
+            foreach ($results as $row) {
+                session_start();
+                $_SESSION["id"] = $row["id"];
+                $_SESSION['user'] = $this->m_email;
+                header("Location: index.php");
+            }
+        }
+
+
         public function Login()
         {
             // conn (PDO)
@@ -69,10 +156,10 @@
 
             foreach ($results as $row) {
                 if (password_verify($this->m_password, $row['password'])) {
-                    header("Location: index.php");
                     session_start();
                     $_SESSION["id"] = $row["id"];
                     $_SESSION['user'] = $this->m_email;
+                    header("Location: ./index.php");
                 } else {
                     throw new Exception("OOPS looks like you've filled in the wrong username or password");
                 }

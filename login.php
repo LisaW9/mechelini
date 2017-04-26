@@ -40,11 +40,10 @@
 <body>
 
     <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-    <script type="text/javascript" src="js/login.js"></script>
 
     <div id="container">
         <img class="logo" src="img/icons/logo.svg" alt="logo">
-        <form action="">
+        <form action="" method="post" id="login">
             <label for="email">E-MAIL</label>
             <input type="text" class="input" id="email" name="email">
 
