@@ -1,0 +1,54 @@
+.footer{
+    background-color: #CF3C3E;
+    position: fixed;
+    width: 100vw;
+    height: 150px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    bottom:0;
+}
+
+.footerLink{
+    display: flex;
+    border-right: 2px solid white;
+    height: 100%;
+    width: 25%;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.footerLink:last-of-type{
+    border-right: none;
+}
+
+.footerLink:active{
+    background-color: #7d252a;
+}
+
+.footerLink p{
+    display: flex;
+    font-size: 1.5em;
+    color: white;
+    text-align: center;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.ruilPlaza{
+    background-image: url('../img/icons/ruilplaza.svg');
+}
+
+.snelRuilen{
+    background-image: url('../img/icons/snelRuilen.svg');
+}
+
+.mijnPlaza{
+    background-image: url('../img/icons/mijnplaza.svg');
+}
+
+.geschiedenis{
+    background-image: url('../img/icons/geschiedenis.svg');
+}
