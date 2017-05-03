@@ -34,7 +34,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/main_style.css">
-    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/formulier.css">
     <title>Mechelini</title>
 </head>
 <body>
@@ -50,8 +50,7 @@
             <label for="password">WACHTWOORD</label>
             <input type="password" class="input" id="password" name="password">
 
-            <input type="submit" value="INLOGGEN" class="submit">
-            <button class="register">REGISTREREN</button>
+            <button class="button">LOGIN</button>
             <p><?php echo  $error?></p>
         </form>
     </div>

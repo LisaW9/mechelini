@@ -19,11 +19,11 @@
             $password = password_hash($password, PASSWORD_DEFAULT, $options);
 
             $user = new User();
+            $user->setMFirstname($firstname);
+            $user->setMLastname($lastname);
+            $user->setMAbbonement("$abbo_ID");
             $user->setMEmail($email);
             $user->setMPassword($password);
-            $user->setMLastname($lastname);
-            $user->setMFirstname($firstname);
-            $user->setMAbbonement("$abbo_ID");
             $user->Register();
 
         }
@@ -40,7 +40,7 @@
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/main_style.css">
-    <link rel="stylesheet" type="text/css" href="css/login.css">
+    <link rel="stylesheet" type="text/css" href="css/formulier.css">
     <title>Mechelini</title>
 </head>
 <body>
@@ -63,9 +63,9 @@
 
             <label for="password">WACHTWOORD</label>
             <input type="password" class="input" id="password" name="password">
-            <p><?php echo $error ?></p>
+            <p class="error"><?php echo $error ?></p>
 
-            <button class="register">REGISTREREN</button>
+            <button class="button">REGISTREREN</button>
         </form>
 </div>
 
