@@ -1,0 +1,18 @@
+.kaart{
+    width: 300px;
+    height: 330px;
+    background-image: url('../img/kaarten/kaart.svg');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.kaartAfbeelding{
+    width: 120px;
+    height: 150px;
+    background-image: url('../img/kaarten/spelers/Elias-Cobbaut.jpg');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
