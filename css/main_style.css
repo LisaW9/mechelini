@@ -62,31 +62,31 @@ nav ul li a:active img{
 
 
 
-.profile{
+.menu_button_profile{
     background-color: #dd3736;
 }
-.cards{
+.menu_button_cards{
     background-color: #b73332;
     margin-left: 50%;
 }
 
-.trade{
+.menu_button_trade{
     background-color: #b73332;
     margin-top: 33.3333333333vh;
 }
 
-.progress{
+.menu_button_progress{
     background-color: #942c2d;
     margin-top: 33.3333333333vh;
     margin-left: 50%;
 }
 
-.friends{
+.menu_button_friends{
     background-color: #942c2d;
     margin-top: 66.66666666vh;
 }
 
-.logout{
+.menu_button_logout{
     background-color: #7d252a;
     margin-left: 50%;
     margin-top: 66.66666666vh;
