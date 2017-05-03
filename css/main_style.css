@@ -15,16 +15,11 @@ body{
 }
 
 #container{
-     background-color: #D8B251;
-     width: 100%;
-     height: 100vh;
-     padding: 10%;
-     color: white;
-}
-
-nav ul{
+    background-color: #D8B251;
+    color: white;
+    max-width: 600px;
+    margin: auto;
     height: 100vh;
-
 }
 
 nav ul li a{
