@@ -1,8 +1,6 @@
-<link rel="stylesheet" type="text/css" href="../css/reset.css">
-<link rel="stylesheet" type="text/css" href="../css/footer.css">
-<link rel="stylesheet" type="text/css" href="../css/main_style.css">
+<link rel="stylesheet" type="text/css" href="css/footer.css">
 <div class="footer">
-    <div class="footerLink ruilplaza">
+    <div class="footerLink ruilPlaza <?php echo ($page == 'Ruilplaza') ? "active" : ""; ?>">
         <p>Ruilplaza</p>
     </div>
     <div class="footerLink snelRuilen">

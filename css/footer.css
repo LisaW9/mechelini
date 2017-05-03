@@ -2,12 +2,16 @@
     background-color: #CF3C3E;
     position: fixed;
     width: 100vw;
-    height: 150px;
+    height: 80px;
     z-index: 1000;
     display: flex;
     align-items: center;
     justify-content: space-around;
     bottom:0;
+}
+
+.footer:active, .active{
+    background-color: #7d252a;
 }
 
 .footerLink{
@@ -30,11 +34,11 @@
 
 .footerLink p{
     display: flex;
-    font-size: 1.5em;
+    font-size: 0.8em;
     color: white;
     text-align: center;
     margin: auto;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .ruilPlaza{
