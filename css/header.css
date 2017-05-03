@@ -2,32 +2,28 @@
     background-color: #CF3C3E;
     position: fixed;
     width: 100vw;
-    height: 150px;
     z-index: 1000;
+    padding-top: 20px;
+    padding-bottom: 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 20px;
+    max-width: 600px;
 }
 
 .back{
-    position: absolute;
-    left: 10%;
     border: 6px solid white;
     border-radius: 50%;
-    width: 100px;
-    height: 100px;
     display: flex;
     align-items: center;
 }
 
 .backArrow{
     display: flex;
-    width: 0;
-    margin-left: 15px;
-    height: 0;
-    border-top: 30px solid transparent;
-    border-bottom: 30px solid transparent;
-    border-right: 45px solid white;
+    margin-left: 5px;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 35px solid white;
 }
 
 .back:active{
@@ -35,11 +31,12 @@
 }
 
 .back:active .backArrow{
-    border-right: 45px solid #7d252a;
+    border-right: 35px solid #7d252a;
 }
 
 .header h1{
     display: flex;
     font-size: 3em;
+    margin-left: 20px;
     color: white;
 }
