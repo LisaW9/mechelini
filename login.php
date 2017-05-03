@@ -41,7 +41,7 @@
 
     <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 
-    <div id="container">
+    <div id="container-form">
         <div class="login-form">
         <img class="logo" src="img/icons/logo.svg" alt="logo">
         <form action="" method="post" id="login">

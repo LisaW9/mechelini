@@ -47,7 +47,7 @@
 
 <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 
-<div id="container">
+<div id="container-form">
         <div class="login-form">
         <form action="" method="post" id="register">
             <label for="firstName">VOORNAAM</label>
