@@ -4,9 +4,12 @@
     width: 100vw;
     height: 80px;
     z-index: 1000;
+    padding-top: 20px;
+    padding-bottom: 20px;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-left: 20px;
+    max-width: 600px;
 }
 
 .back{
@@ -41,5 +44,6 @@
 .header h1{
     display: flex;
     font-size: 2em;
+    margin-left: 20px;
     color: white;
 }
