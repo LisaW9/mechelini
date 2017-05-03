@@ -48,25 +48,33 @@
 <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 
 <div id="container">
+        <div class="login-form">
         <form action="" method="post" id="register">
             <label for="firstName">VOORNAAM</label>
-            <input type="text" class="input" id="firstName" name="firstName">
+            <input type="text" class="input profile_icon" id="firstName" name="firstName">
 
             <label for="lastName">ACHTERNAAM</label>
-            <input type="text" class="input" id="lastName" name="lastName">
+            <input type="text" class="input profile_icon" id="lastName" name="lastName">
 
             <label for="abbo_ID">Abbonement ID</label>
-            <input type="text" class="input" id="abbo_ID" name="abbo_ID">
+            <input type="text" class="input profile_icon" id="abbo_ID" name="abbo_ID">
 
             <label for="email">E-MAIL</label>
-            <input type="text" class="input" id="email" name="email">
+            <input type="text" class="input profile_icon" id="email" name="email">
 
             <label for="password">WACHTWOORD</label>
-            <input type="password" class="input" id="password" name="password">
-            <p class="error"><?php echo $error ?></p>
+            <input type="password" class="input lock_icon" id="password" name="password">
 
-            <button class="button">REGISTREREN</button>
+            <div class="bottom-layout">
+
+                <p class="error"><?php echo $error ?></p>
+
+                <button class="button">REGISTREREN</button>
+                <a href="login.php"><p class="link">Login here</p></a>
+
+            </div>
         </form>
+        </div>
 </div>
 
 </body>

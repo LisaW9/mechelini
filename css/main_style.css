@@ -7,20 +7,19 @@ body{
     box-sizing: border-box;
 }
 
+.logo{
+    width: 500px;
+    max-width: 250px;
+    display: block;
+    margin: auto;
+}
+
 #container{
      background-color: #D8B251;
      width: 100%;
      height: 100vh;
      padding: 10%;
      color: white;
-}
-
-.error{
-    padding: 15px;
-    color: white;
-    background-color: #CF3C3E;
-    margin-bottom: 10px;
-    border-radius: 5px;
 }
 
 nav ul{

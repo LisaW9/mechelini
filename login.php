@@ -42,17 +42,30 @@
     <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
 
     <div id="container">
+        <div class="login-form">
         <img class="logo" src="img/icons/logo.svg" alt="logo">
         <form action="" method="post" id="login">
-            <label for="email">E-MAIL</label>
-            <input type="text" class="input" id="email" name="email">
 
-            <label for="password">WACHTWOORD</label>
-            <input type="password" class="input" id="password" name="password">
+            <div class="top-layout">
 
-            <button class="button">LOGIN</button>
-            <p><?php echo  $error?></p>
+                <label for="email">E-MAIL</label>
+                <input type="text" class="input profile_icon" id="email" name="email">
+
+                <label for="password">WACHTWOORD</label>
+                <input type="password" class="input lock_icon" id="password" name="password">
+
+            </div>
+
+            <div class="bottom-layout">
+
+                <p class="error"><?php echo $error ?></p>
+
+                <button class="button">LOGIN</button>
+                <a href="register.php"><p class="link">Register here</p></a>
+
+            </div>
         </form>
+        </div>
     </div>
 
 </body>

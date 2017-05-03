@@ -2,17 +2,10 @@
     background-color: #D8B251;
     width: 100%;
     height: 100vh;
-    padding: 50px;
     color: white;
     max-width: 600px;
     margin: auto;
-}
-
-.logo{
-    width: 70%;
-    max-width: 300px;
-    display: block;
-    margin: auto;
+    padding: 50px;
 }
 
 form{
@@ -30,17 +23,45 @@ form input, form label, form button{
     background-color: #CF3C3E;
     border: none;
     border-radius: 5px;
-    height: 40px;
+    height: 50px;
     color: white;
     font-weight:bold;
     font-size: 1em;
+    margin-bottom: 20px;
+}
+
+.error{
+    padding-left: 15px;
+    line-height: 30px;
+    color: white;
+    background-color: #CF3C3E;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.link{
+    padding: 15px;
+    color: white;
+    background-color: #CF3C3E;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.link:hover, .button:hover{
+    transition:  0.05s;
+    background-color: #942b2c;
+}
+
+a{
+    text-decoration: none;
+    color: white;
 }
 
 .input{
     height: 40px;
     margin: 10px 0;
     padding-left: 50px;
-    background-size: 40px 40px;
+    background-size: 30px 40px;
     background-position: 5px 0;
     background-repeat: no-repeat;
     border: none;
@@ -48,12 +69,33 @@ form input, form label, form button{
     font-size: 1.5em;
 }
 
-#email{
+
+
+.profile_icon{
     background-image: url('../img/icons/user_icon.svg');
 
 }
 
-#password{
+.lock_icon{
     background-image: url('../img/icons/password_icon.svg');
-    margin-bottom: 40px;
+}
+
+.login-form{
+    max-width: 500px;
+    margin: auto;
+    position: absolute;
+    left: 10%;
+    right: 10%;
+    bottom: 15px;
+    top: 15px;
+}
+
+.bottom-layout{
+    position: absolute;
+    width: 100%;
+    bottom: 15px;
+}
+
+.top-layout{
+
 }
