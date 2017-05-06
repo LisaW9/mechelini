@@ -1,4 +1,14 @@
-<!doctype html>
+<?php
+session_start();
+if (!isset($_SESSION['user'])) {
+    header('location: login.php');
+}
+
+spl_autoload_register(function ($class) {
+    include_once("classes/" . $class . ".class.php");
+});
+
+?><!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">

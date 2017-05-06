@@ -30,8 +30,7 @@
     } catch (Exception $e) {
         $error = $e->getMessage();
     }
-?>
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
@@ -49,6 +48,7 @@
 
 <div id="container-form">
         <div class="login-form">
+            <p class="error"><?php echo $error ?></p>
         <form action="" method="post" id="register">
             <label for="firstName">VOORNAAM</label>
             <input type="text" class="input profile_icon" id="firstName" name="firstName">
@@ -66,8 +66,6 @@
             <input type="password" class="input lock_icon" id="password" name="password">
 
             <div class="bottom-layout">
-
-                <p class="error"><?php echo $error ?></p>
 
                 <button class="button">REGISTREREN</button>
                 <a href="login.php"><p class="link">Login here</p></a>

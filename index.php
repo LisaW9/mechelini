@@ -8,9 +8,7 @@
         include_once("classes/" . $class . ".class.php");
     });
 
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
