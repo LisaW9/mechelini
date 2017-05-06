@@ -1,5 +1,5 @@
 $( document ).ready(function() {
-    $(".menu_button_1").click(function(){
+    $(".menu_button_profile").click(function(){
         console.log("button click");
         //noinspection JSJQueryEfficiency
         $(".menu_button_profile").animate({
@@ -17,7 +17,7 @@ $( document ).ready(function() {
         });
         setTimeout(function() {
             window.location.href = "../profile.php";
-        }, 2000);
+        }, 1000);
     });
 
     $(".menu_button_cards").click(function(){
@@ -40,7 +40,7 @@ $( document ).ready(function() {
         });
         setTimeout(function() {
             window.location.href = "../profile.php";
-        }, 2000);
+        }, 1000);
     });
 
     $(".menu_button_trade").click(function(){
@@ -61,8 +61,8 @@ $( document ).ready(function() {
             opacity: '0'
         });
         setTimeout(function() {
-            window.location.href = "http://localhost/mechelini/ruilplaza.php";
-        }, 2000);
+            window.location.pathname = "/mechelini/ruilplaza.php";
+        }, 1000);
     });
 
     $(".menu_button_progress").click(function(){
@@ -85,7 +85,7 @@ $( document ).ready(function() {
         });
         setTimeout(function() {
             window.location.href = "../profile.php";
-        }, 2000);
+        }, 1000);
     });
 
     $(".menu_button_friends").click(function(){
@@ -108,7 +108,7 @@ $( document ).ready(function() {
         });
         setTimeout(function() {
             window.location.href = "../profile.php";
-        }, 2000);
+        }, 1000);
     });
 
     $(".menu_button_logout").click(function(){
@@ -131,6 +131,6 @@ $( document ).ready(function() {
         });
         setTimeout(function() {
             window.location.href = "../profile.php";
-        }, 2000);
+        }, 1000);
     });
 });

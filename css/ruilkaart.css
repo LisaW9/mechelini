@@ -6,10 +6,11 @@
 .info p {
     color: white;
     font-family: montserrat;
+    font-size: 0.7em;
 }
 
 .user, .date, .rarity {
-    width: 150px;
+    width: 60%;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -18,16 +19,16 @@
 }
 
 .profilePicture {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     background-size: cover;
     background-repeat: no-repeat;
 }
 
 .dateIcon {
-    width: 50px;
-    height: 50px;
+    width: 30px;
+    height: 30px;
     background-image: url('../img/icons/date_icon.svg');
     background-size: 100%;
     background-repeat: no-repeat;
