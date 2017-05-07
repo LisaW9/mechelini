@@ -22,6 +22,7 @@ spl_autoload_register(function ($class) {
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/kaart.css">
     <link rel="stylesheet" type="text/css" href="css/ruilkaart.css">
+    <link rel="stylesheet" type="text/css" href="css/ruilplaza.css">
     <link rel="stylesheet" type="text/css" href="css/ruilkaartDetail.css">
 
 </head>
