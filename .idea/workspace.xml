@@ -2,32 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="54dbf455-f7ca-45b1-9ab7-e7971a6dd036" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/kaarten/spelers/Ahmed_El_Messaoudi.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/kaarten/spelers/Aleksandar_Bjelica.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/kaarten/spelers/Anthony_Moris.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/kaarten/spelers/Anthony_Swolfs.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/kaarten/spelers/Colin_Coosemans.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/kaarten/spelers/Dimitri_Kolovos.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/kaarten/spelers/Edin_Cocalic.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/kaarten/spelers/Elisa_Cobbaut.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/kaarten/spelers/Jordi_Vanlerberghe.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/kaarten/spelers/Jules_Van_Cleemput.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/kaarten/spelers/Laurens_Paulussen.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/kaarten/spelers/Mats_Rits.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/kaarten/spelers/Nils_Schouterden.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/kaarten/spelers/Randall_Leal.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/kaarten/spelers/Seth_De_Witte.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/kaarten/spelers/Sotiris_ninis.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/kaarten/spelers/Tim_Matthys.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/kaarten/spelers/Uros_Vitas.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/kaarten/spelers/Xavier_Chen.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/kaarten/spelers/Yohan_Croizet.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/classes/Cards.class.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/img/kaarten/spelers/spelers.svg" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/img/kaarten/spelers/Elias-Cobbaut.jpg" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/User.class.php" afterPath="$PROJECT_DIR$/classes/User.class.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/ruilplaza.php" afterPath="$PROJECT_DIR$/ruilplaza.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/classes/Cards.class.php" afterPath="$PROJECT_DIR$/classes/Cards.class.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -85,30 +61,17 @@
         <entry file="file://$PROJECT_DIR$/css/ruilplaza.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="110">
-              <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+              <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Cards.class.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/classes/Cards.class.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="265">
-              <caret line="60" column="76" lean-forward="false" selection-start-line="60" selection-start-column="76" selection-end-line="60" selection-end-column="76" />
-              <folding>
-                <marker date="1494165776736" expanded="true" signature="1097:1140" ph="SELECT * FRO... cards" />
-                <marker date="1494165776736" expanded="true" signature="1507:1575" ph="INSERT INTO user_cards... " />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="User.class.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="User.class.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/classes/User.class.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="353">
-              <caret line="116" column="0" lean-forward="true" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+            <state relative-caret-position="396">
+              <caret line="117" column="35" lean-forward="false" selection-start-line="117" selection-start-column="34" selection-end-line="117" selection-end-column="35" />
               <folding>
                 <marker date="1494165776692" expanded="true" signature="2220:2345" ph="insert into users... " />
                 <marker date="1494165776692" expanded="true" signature="2733:2773" ph="SELECT * FRO... users" />
@@ -134,7 +97,7 @@
         <entry file="file://$PROJECT_DIR$/ruilplaza.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="242">
-              <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+              <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -156,6 +119,19 @@
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Cards.class.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/classes/Cards.class.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="623">
+              <caret line="73" column="26" lean-forward="true" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
+              <folding>
+                <marker date="1494406744808" expanded="true" signature="1097:1146" ph="SELECT * FRO... cards" />
+                <marker date="1494406744808" expanded="true" signature="1486:1554" ph="INSERT INTO user_cards... " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -202,8 +178,8 @@
         <option value="$PROJECT_DIR$/css/ruilkaartDetail.css" />
         <option value="$PROJECT_DIR$/classes/Cards.php" />
         <option value="$PROJECT_DIR$/ruilplaza.php" />
-        <option value="$PROJECT_DIR$/classes/Cards.class.php" />
         <option value="$PROJECT_DIR$/classes/User.class.php" />
+        <option value="$PROJECT_DIR$/classes/Cards.class.php" />
       </list>
     </option>
   </component>
@@ -215,9 +191,10 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="width" value="1084" />
-    <option name="height" value="1038" />
+    <option name="x" value="-9" />
+    <option name="y" value="-9" />
+    <option name="width" value="1938" />
+    <option name="height" value="1048" />
   </component>
   <component name="ProjectView">
     <navigator currentView="ProjectPane" proportions="" version="1">
@@ -234,7 +211,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
@@ -258,7 +234,7 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
+              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -272,7 +248,11 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="includes" />
+              <option name="myItemId" value="img" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="kaarten" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
@@ -286,26 +266,21 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="css" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mechelini" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mechelini" />
+              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="classes" />
+              <option name="myItemId" value="kaarten" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="spelers" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -407,7 +382,8 @@
       <workItem from="1493205847616" duration="2304000" />
       <workItem from="1493798245205" duration="7776000" />
       <workItem from="1494093671582" duration="7186000" />
-      <workItem from="1494138559288" duration="6697000" />
+      <workItem from="1494138559288" duration="7096000" />
+      <workItem from="1494405067262" duration="1741000" />
     </task>
     <task id="LOCAL-00001" summary="kaart voorbeeld klaar">
       <created>1493813434704</created>
@@ -451,26 +427,33 @@
       <option name="project" value="LOCAL" />
       <updated>1494101777882</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="User ontvangt 5 random kaarten bij registreren - werkt maar nog minor issues">
+      <created>1494165814772</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1494165814772</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="38246000" />
+    <option name="totallyTimeSpent" value="40386000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="0" width="1084" height="1038" extended-state="0" />
+    <frame x="-9" y="-9" width="1938" height="1048" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14781746" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14983888" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -493,7 +476,8 @@
     <MESSAGE value="minor css fixes" />
     <MESSAGE value="minor fixes" />
     <MESSAGE value="updated 'ruilplaza'" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated 'ruilplaza'" />
+    <MESSAGE value="User ontvangt 5 random kaarten bij registreren - werkt maar nog minor issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="User ontvangt 5 random kaarten bij registreren - werkt maar nog minor issues" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -785,7 +769,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="21" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -793,7 +776,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="462">
           <caret line="21" column="3" lean-forward="false" selection-start-line="21" selection-start-column="3" selection-end-line="21" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -825,7 +807,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -856,7 +837,7 @@
     <entry file="file://$PROJECT_DIR$/css/ruilplaza.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
-          <caret line="5" column="1" lean-forward="true" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+          <caret line="5" column="1" lean-forward="false" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
           <folding />
         </state>
       </provider>
@@ -874,30 +855,30 @@
     <entry file="file://$PROJECT_DIR$/ruilplaza.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
-          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
+          <caret line="11" column="16" lean-forward="false" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="16" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/classes/Cards.class.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="60" column="76" lean-forward="false" selection-start-line="60" selection-start-column="76" selection-end-line="60" selection-end-column="76" />
-          <folding>
-            <marker date="1494165776736" expanded="true" signature="1097:1140" ph="SELECT * FRO... cards" />
-            <marker date="1494165776736" expanded="true" signature="1507:1575" ph="INSERT INTO user_cards... " />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/classes/User.class.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="353">
-          <caret line="116" column="0" lean-forward="true" selection-start-line="116" selection-start-column="0" selection-end-line="116" selection-end-column="0" />
+        <state relative-caret-position="396">
+          <caret line="117" column="35" lean-forward="false" selection-start-line="117" selection-start-column="34" selection-end-line="117" selection-end-column="35" />
           <folding>
             <marker date="1494165776692" expanded="true" signature="2220:2345" ph="insert into users... " />
             <marker date="1494165776692" expanded="true" signature="2733:2773" ph="SELECT * FRO... users" />
             <marker date="1494165776692" expanded="true" signature="3320:3360" ph="SELECT * FRO... users" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/classes/Cards.class.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="623">
+          <caret line="73" column="26" lean-forward="true" selection-start-line="73" selection-start-column="26" selection-end-line="73" selection-end-column="26" />
+          <folding>
+            <marker date="1494406744808" expanded="true" signature="1097:1146" ph="SELECT * FRO... cards" />
+            <marker date="1494406744808" expanded="true" signature="1486:1554" ph="INSERT INTO user_cards... " />
           </folding>
         </state>
       </provider>

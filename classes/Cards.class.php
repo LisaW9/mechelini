@@ -58,11 +58,9 @@ class Cards
 
     public static function getRandomCards($p_iAmount){
         $conn = Db::getInstance();
-        $stmnt = $conn->prepare("SELECT * FROM cards ORDER BY rand() LIMIT 5");
-        $stmnt->bindValue(':amount', (int)$p_iAmount);
+        $stmnt = $conn->prepare("SELECT * FROM cards ORDER BY rand() LIMIT :amount");
+        $stmnt->bindParam(':amount', $p_iAmount, PDO::PARAM_INT);
         $stmnt->execute();
-        echo "\nSELECTING CARDS:\n";
-
         while($result = $stmnt->fetch(PDO::FETCH_OBJ)){
             Cards::saveUserCards($result->id);
         };
