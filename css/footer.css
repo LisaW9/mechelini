@@ -10,7 +10,7 @@
     bottom:0;
 }
 
-.footer:active, .active{
+.active{
     background-color: #7d252a;
 }
 

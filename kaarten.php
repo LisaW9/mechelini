@@ -24,17 +24,18 @@ spl_autoload_register(function ($class) {
 
 </head>
 <body>
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="js/kaarten.js"></script>
 <?php $page = 'Kaarten';
 include_once('includes/header.inc.php'); ?>
 <div id="container">
     <div class="kaarten">
-        <?php foreach($_SESSION['userCards'] as $card): ?>
+        <?php foreach ($_SESSION['userCards'] as $card): ?>
             <div class="kaartDiv">
                 <?php include('includes/kaart.inc.php'); ?>
             </div>
         <?php endforeach; ?>
     </div>
 </div>
-<?php include_once('includes/footer.inc.php'); ?>
 </body>
 </html>
