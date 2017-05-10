@@ -16,7 +16,7 @@ $( document ).ready(function() {
             opacity: '0'
         });
         setTimeout(function() {
-            window.location.href = "../profile.php";
+            window.location.href = "/profile.php";
         }, 1000);
     });
 
@@ -39,7 +39,7 @@ $( document ).ready(function() {
             opacity: '0'
         });
         setTimeout(function() {
-            window.location.href = "/mechelini/kaarten.php";
+            window.location.href = "/kaarten.php";
         }, 1000);
     });
 
@@ -61,7 +61,7 @@ $( document ).ready(function() {
             opacity: '0'
         });
         setTimeout(function() {
-            window.location.pathname = "/mechelini/ruilplaza.php";
+            window.location.pathname = "/ruilplaza.php";
         }, 1000);
     });
 

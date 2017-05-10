@@ -16,7 +16,7 @@ $(document).ready(function () {
             opacity: '0'
         });
         setTimeout(function () {
-            window.location.pathname = "/mechelini";
+            window.location.pathname = "/";
         }, 1000);
     });
 });

@@ -11,7 +11,7 @@ $(document).ready(function(){
             margin: '0',
             easing: easeInOutBack
         }, 200);
-        window.location.href = "../mechelini/register.php";
+        window.location.href = "/register.php";
 
     });
 
@@ -25,7 +25,7 @@ $(document).ready(function(){
             margin: '0',
             easing: easeInOutBack
         }, 200);
-        window.location.href = "../mechelini/index.php";
+        window.location.href = "/index.php";
 
     })
 

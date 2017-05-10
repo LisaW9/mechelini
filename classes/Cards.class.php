@@ -58,7 +58,7 @@ class Cards
 
     public static function getRandomCards($p_iAmount){
         $conn = Db::getInstance();
-        $stmnt = $conn->prepare("SELECT * FROM cards ORDER BY rand() LIMIT :amount");
+        $stmnt = $conn->prepare("SELECT * FROM cards ORDER BY (rand() * rarity) LIMIT :amount");
         $stmnt->bindParam(':amount', $p_iAmount, PDO::PARAM_INT);
         $stmnt->execute();
         while($result = $stmnt->fetch(PDO::FETCH_OBJ)){
@@ -79,7 +79,7 @@ class Cards
         unset($_SESSION['userCards']);
         $_SESSION['userCards'] = [];
         $conn = Db::getInstance();
-        $stmnt = $conn->prepare("SELECT * FROM cards WHERE id in(SELECT card_id FROM user_cards WHERE user_id = :user_id)");
+        $stmnt = $conn->prepare("SELECT * FROM cards WHERE id in(SELECT card_id FROM user_cards WHERE user_id = :user_id) ORDER BY theme_ID, name");
         $stmnt->bindValue(':user_id', $_SESSION['id']);
         $stmnt->execute();
         while($result = $stmnt->fetch(PDO::FETCH_OBJ)){
