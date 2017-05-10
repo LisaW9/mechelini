@@ -114,7 +114,6 @@ class User
         foreach ($results as $row) {
             $_SESSION["id"] = $row["id"];
             $_SESSION['user'] = $this->m_email;
-
             Cards::getRandomCards(5);
             header("Location: index.php");
         }
@@ -142,6 +141,7 @@ class User
             if (password_verify($this->m_password, $row['password'])) {
                 $_SESSION["id"] = $row["id"];
                 $_SESSION['user'] = $this->m_email;
+                Cards::getUserCards();
                 header("Location: ./index.php");
             } else {
                 throw new Exception("OOPS looks like you've filled in the wrong username or password");

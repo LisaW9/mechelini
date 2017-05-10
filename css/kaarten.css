@@ -1,0 +1,21 @@
+#container {
+    height: 100vh;
+}
+
+.kaarten {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.kaartDiv {
+    width: 50%;
+    height: 100px;
+}
+
+.kaart {
+    width: 50%;
+    height: 100%;
+    margin: auto;
+}

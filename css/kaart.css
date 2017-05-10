@@ -1,7 +1,6 @@
 .kaart{
     width:100%;
     height:50%;
-    background-image: url('../img/kaarten/kaart.svg');
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;

@@ -72,6 +72,19 @@ class Cards
         $stmnt->bindValue(':user_id', $_SESSION['id']);
         $stmnt->bindValue(':card_id', $p_iCardId);
         $stmnt->execute();
+        Cards::getUserCards();
+    }
+
+    public static function getUserCards(){
+        unset($_SESSION['userCards']);
+        $_SESSION['userCards'] = [];
+        $conn = Db::getInstance();
+        $stmnt = $conn->prepare("SELECT * FROM cards WHERE id in(SELECT card_id FROM user_cards WHERE user_id = :user_id)");
+        $stmnt->bindValue(':user_id', $_SESSION['id']);
+        $stmnt->execute();
+        while($result = $stmnt->fetch(PDO::FETCH_OBJ)){
+            array_push($_SESSION['userCards'], $result);
+        };
     }
 
 }
