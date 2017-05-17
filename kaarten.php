@@ -24,18 +24,21 @@ spl_autoload_register(function ($class) {
 
 </head>
 <body>
-<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
-<script type="text/javascript" src="js/kaarten.js"></script>
+
 <?php $page = 'Kaarten';
 include_once('includes/header.inc.php'); ?>
 <div id="container">
-    <div class="kaarten">
-        <?php foreach ($_SESSION['userCards'] as $card): ?>
-            <div class="kaartDiv">
-                <?php include('includes/kaart.inc.php'); ?>
-            </div>
-        <?php endforeach; ?>
+    <div class="filters">
+        <div class="filter amount first">#</div>
+        <div class="filter abc second">a-z</div>
+        <div class="filter time active">L</div>
     </div>
+
+    <div class="kaarten"></div>
+
 </div>
+<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script type="text/javascript" src="js/transition_back.js"></script>
+<script type="text/javascript" src="js/filter.js"></script>
 </body>
 </html>

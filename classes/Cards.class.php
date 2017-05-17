@@ -72,10 +72,9 @@ class Cards
         $stmnt->bindValue(':user_id', $_SESSION['id']);
         $stmnt->bindValue(':card_id', $p_iCardId);
         $stmnt->execute();
-        Cards::getUserCards();
     }
 
-    public static function getUserCards(){
+    /*public static function getUserCards(){
         unset($_SESSION['userCards']);
         $_SESSION['userCards'] = [];
         $conn = Db::getInstance();
@@ -85,6 +84,6 @@ class Cards
         while($result = $stmnt->fetch(PDO::FETCH_OBJ)){
             array_push($_SESSION['userCards'], $result);
         };
-    }
+    }*/
 
 }

@@ -1,20 +1,21 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:400,700');
-body{
+
+body {
     font-family: Montserrat, Arial, sans-serif;
 }
 
-*{
+* {
     box-sizing: border-box;
 }
 
-.logo{
+.logo {
     width: 80%;
     max-width: 250px;
     display: block;
     margin: auto;
 }
 
-#container{
+#container {
     background-color: #D8B251;
     color: white;
     max-width: 600px;
@@ -23,11 +24,11 @@ body{
     padding-top: 10vh;
 }
 
-nav{
+nav {
     margin-top: -10vh;
 }
 
-nav ul li a{
+nav ul li a {
     display: flex;
     flex-direction: column;
     width: 50%;
@@ -39,53 +40,52 @@ nav ul li a{
     position: absolute;
 }
 
-nav ul li a:active{
+nav ul li a:active {
     transition: linear 0.3s;
 }
 
-nav ul li a p{
+nav ul li a p {
     font-size: 1.8em;
     margin-bottom: 50px;
 }
 
-nav ul li a img{
+nav ul li a img {
     width: 40%;
     max-width: 150px;
     margin: auto;
 }
 
-nav ul li a:active img{
+nav ul li a:active img {
     width: 30%;
     transition: linear 0.1s;
 }
 
-
-
-.menu_button_profile{
+.menu_button_profile {
     background-color: #dd3736;
 }
-.menu_button_cards{
+
+.menu_button_cards {
     background-color: #b73332;
     margin-left: 50%;
 }
 
-.menu_button_trade{
+.menu_button_trade {
     background-color: #b73332;
     margin-top: 33.3333333333vh;
 }
 
-.menu_button_progress{
+.menu_button_progress {
     background-color: #942c2d;
     margin-top: 33.3333333333vh;
     margin-left: 50%;
 }
 
-.menu_button_friends{
+.menu_button_friends {
     background-color: #942c2d;
     margin-top: 66.66666666vh;
 }
 
-.menu_button_logout{
+.menu_button_logout {
     background-color: #7d252a;
     margin-left: 50%;
     margin-top: 66.66666666vh;
