@@ -117,8 +117,6 @@ class User
             Cards::getRandomCards(5);
             header("Location: index.php");
         }
-
-
     }
 
 

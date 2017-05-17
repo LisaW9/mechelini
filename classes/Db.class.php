@@ -11,7 +11,7 @@ abstract class Db
             return self::$conn;
         } else {
             //er is nog geen connectie maak ze aan en geef ze terug
-            self::$conn = new PDO("mysql:host=localhost; dbname=mechelini", "root", "");
+            self::$conn = new PDO("mysql:host=localhost; dbname=lisawo1q_mechelini", "lisawo1q_mecheli", "mechelini");
             return self::$conn;
         }
     }
