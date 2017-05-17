@@ -39,7 +39,7 @@ try {
 </head>
 <body>
 
-<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 
 <div id="container-form">
     <div class="login-form">
