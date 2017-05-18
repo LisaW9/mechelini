@@ -29,11 +29,11 @@ $card = $_GET['card'];
 <div id="container">
     <div class="close">X</div>
     <div class="fav"></div>
-    <div class="kaart" style="background-image: url('img/kaarten/<?php echo str_replace('-', '_', $card) ?>.png');"></div>
-
-
+    <div class="kaart"
+         style="background-image: url('img/kaarten/<?php echo str_replace('-', '_', $card) ?>.png');"></div>
+    <?php echo $_SESSION['id']; ?>
 </div>
-<script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+<script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="js/detail.js"></script>
 </body>
 </html>

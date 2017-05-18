@@ -8,23 +8,16 @@ abstract class Location{
     private static $time;
     private static $date;
 
-    /**
-     * Location constructor.
-     */
-    public function __construct()
-    {
-        $this->time = date("h:i:sa");
-        $this->date = date("Y-m-d");
-    }
 
     public static function compareTime(){
+        date_default_timezone_set('Europe/Brussels');
         $conn = Db::getInstance();
         $statement = $conn->prepare('SELECT * FROM matches');
         $statement->execute();
         while($res = $statement->fetch(PDO::FETCH_OBJ)){
-            if(self::$time >= $res->time && self::$date == $res->date){
+            if(($res->time <= date('H:i') || date('H:i') <= date('H:i', strtotime($res->time)+3600)) && date('Y-m-d') == $res->date){
+                Cards::getRandomCards(10);
                 return 'Er is een match bezig!';
-                break;
             }
         }
         return 'Er is nog geen match bezig. Kom later nog eens terug!';

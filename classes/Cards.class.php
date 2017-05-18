@@ -72,6 +72,7 @@ class Cards
         $stmnt->bindValue(':user_id', $_SESSION['id']);
         $stmnt->bindValue(':card_id', $p_iCardId);
         $stmnt->execute();
+        $_SESSION['cardsReceived'] = true;
     }
 
     /*public static function getUserCards(){

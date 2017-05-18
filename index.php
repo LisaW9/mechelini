@@ -26,7 +26,7 @@ spl_autoload_register(function ($class) {
 <?php
 if ($_SESSION['loggedIn']) {
     echo '<script type="text/javascript" src="js/getLocation.js"></script>';
-    unset($_SESSION['loggedIn']);
+    $_SESSION['loggedIn'] = false;
 } ?>
 <div id="container">
     <nav>
