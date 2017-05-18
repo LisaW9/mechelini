@@ -23,7 +23,13 @@ spl_autoload_register(function ($class) {
 <body>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="js/transition_main.js"></script>
-<script type="text/javascript" src="js/getLocation.js"></script>
+<?php
+if($_SESSION['loggedIn']){
+    echo '<script type="text/javascript" src="js/getLocation.js"></script>';
+    unset($_SESSION['loggedIn']);
+}
+?>
+
 <div id="container">
     <nav>
         <ul>

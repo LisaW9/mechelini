@@ -11,11 +11,10 @@ $(document).ready(function () {
         console.log(latitude);
         console.log(longitude);
 
+        if (compareLat == latitude && compareLon == longitude) {
+            alert('Je bent in de Gym!!');
+        } else {
+            alert('Begeef je naar de Gym om kaarten te ontvangen');
+        }
     });
-
-    if (compareLat == latitude && compareLon == longitude){
-        alert('Je bent in de Gym!!');
-    } else{
-        alert('Begeef je naar de Gym om kaarten te ontvangen');
-    }
 });
