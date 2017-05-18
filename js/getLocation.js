@@ -8,11 +8,15 @@ $(document).ready(function () {
         latitude = position.coords.latitude;
         longitude = position.coords.longitude;
 
-        console.log(latitude);
-        console.log(longitude);
+        // TEST -> MOET WEG !!
+        latitude = compareLat;
+        longitude = compareLon;
 
         if (compareLat == latitude && compareLon == longitude) {
             alert('Je bent in de Gym!!');
+            $.post( "ajax/location.php", function( data ) {
+                alert(data);
+            });
         } else {
             alert('Begeef je naar de Gym om kaarten te ontvangen');
         }

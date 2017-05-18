@@ -104,19 +104,16 @@ class User
         $stmnt->bindValue(":email", $this->m_email);
         $stmnt->bindvalue(":password", $this->m_password);
         $stmnt->execute();
-        echo "Registered";
 
         $statement = $conn->prepare("SELECT * FROM users WHERE email = :email ;");
         $statement->bindValue(":email", $this->m_email);
         $statement->execute();
-        $results = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $result = $statement->fetch(PDO::FETCH_ASSOC);
 
-        foreach ($results as $row) {
-            $_SESSION["id"] = $row["id"];
-            $_SESSION['user'] = $this->m_email;
-            Cards::getRandomCards(5);
-            header("Location: index.php");
-        }
+        $_SESSION["id"] = $result["id"];
+        $_SESSION['user'] = $this->m_email;
+        Cards::getRandomCards(5);
+        header("Location: index.php");
     }
 
 

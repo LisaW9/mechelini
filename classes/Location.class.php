@@ -23,14 +23,11 @@ abstract class Location{
         $statement->execute();
         while($res = $statement->fetch(PDO::FETCH_OBJ)){
             if(self::$time >= $res->time && self::$date == $res->date){
-                self::getLocation();
+                return 'Er is een match bezig!';
                 break;
             }
         }
-    }
-
-    public static function getLocation(){
-
+        return 'Er is nog geen match bezig. Kom later nog eens terug!';
     }
 
 }
