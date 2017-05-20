@@ -27,16 +27,19 @@ try {
     <link rel="stylesheet" type="text/css" href="css/main_style.css">
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/profile.css">
-    <title><?php echo $user->firstName; ?></title>
+    <title>profile van <?php echo $user->firstName; ?></title>
 </head>
 <body>
 <?php $page = 'Profile';
 include_once('includes/header.inc.php'); ?>
 <div id="container">
     <div class="profile">
-        <p><?php $userid ?></p>
-        <img src="img/face_youtube%20250x250.png" alt="missing_img">
-        <h1><?php echo $user->firstName . ' ' . $user->lastName; ?></h1>
+        <img src="img/userImages/<?php echo $user->image ?>" alt="<?php echo 'profielfoto van ' . $user->firstName . ' ' . $user->lastName . ' is missing'; ?>" class="profile_img">
+        <div class="profile_data">
+            <h1><?php echo $user->firstName . ' ' . $user->lastName; ?></h1>
+            <h2>ID:<?php echo $user->abbo_ID ?></h2>
+            <h2>Unlocks: </h2>
+        </div>
     </div>
 </div>
 </body>
