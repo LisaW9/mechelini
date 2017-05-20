@@ -20,6 +20,10 @@ if (isset($_POST["filter"])) {
     Cards::getCards($query);
     echo '<script src="js/kaart.js"></script>';
 } else if (isset($_POST['openCards'])) {
-    Cards::getClosedCards();
-    echo '<script src="js/flipCards.js"></script>';
+    if($_POST['openCards'] == 'show'){
+        Cards::getClosedCards();
+        echo '<script src="js/flipCards.js"></script>';
+    } else{
+        Cards::openUserCards($_POST['openCards']);
+    }
 }

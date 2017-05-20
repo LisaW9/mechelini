@@ -82,9 +82,8 @@ class Cards
     public static function openUserCards($p_iCardId)
     {
         $conn = Db::getInstance();
-        $stmnt = $conn->prepare("UPDATE user_cards SET opened = 1 WHERE user_id = :user_ID AND card_id = :card_ID");
-        $stmnt->bindValue(':user_id', $_SESSION['id']);
-        $stmnt->bindValue(':card_id', $p_iCardId);
+        $stmnt = $conn->prepare("UPDATE user_cards SET opened = 1 WHERE id = :id");
+        $stmnt->bindValue(':id', $p_iCardId);
         $stmnt->execute();
     }
 
@@ -119,11 +118,11 @@ class Cards
     public static function getClosedCards()
     {
         $conn = Db::getInstance();
-        $statement = $conn->prepare('SELECT c.name, c.image FROM cards c INNER JOIN user_cards uc ON c.id = uc.card_id WHERE uc.user_id = :user_id AND uc.opened = 0 ORDER BY uc.id');
+        $statement = $conn->prepare('SELECT uc.id, c.name, c.image FROM cards c INNER JOIN user_cards uc ON c.id = uc.card_id WHERE uc.user_id = :user_id AND uc.opened = 0 ORDER BY uc.id');
         $statement->bindValue(":user_id", $_SESSION['id']);
         $statement->execute();
         while ($result = $statement->fetch(PDO::FETCH_OBJ)) {
-            echo "<div class='kaartDiv'>";
+            echo "<div class='kaartDiv' id='" . $result->id . "'>";
             echo "<div class='flipper'>";
             include("../includes/kaart.inc.php");
             echo "<div class='closed' style=\"background-image:url('img/kaarten/closed.png')\"></div>";
