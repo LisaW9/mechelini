@@ -7,10 +7,9 @@ $(document).ready(function () {
     navigator.geolocation.getCurrentPosition(function (position) {
         latitude = position.coords.latitude.toFixed(6);
         longitude = position.coords.longitude.toFixed(6);
-        console.log(compareLat + ", " + compareLon);
-        console.log(latitude + ", " + longitude);
-console.log(Math.abs(compareLat - latitude).toFixed(6));
-        // TEST -> MOET WEG !!
+
+        latitude = 51.024684;
+        longitude = 4.484692;
 
         if (Math.abs(compareLat - latitude).toFixed(6) < 0.001 && Math.abs(compareLon - longitude).toFixed(6) < 0.001) {
             alert('Je bent in de Gym!!');
