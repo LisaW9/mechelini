@@ -137,6 +137,7 @@ class User
                 $_SESSION["id"] = $row["id"];
                 $_SESSION['user'] = $this->m_email;
                 $_SESSION['loggedIn'] = true;
+                Cards::checkForUnopenedCards();
                 header("Location: ./index.php");
             } else {
                 throw new Exception("OOPS looks like you've filled in the wrong username or password");

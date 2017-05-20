@@ -90,3 +90,32 @@ nav ul li a:active img {
     margin-left: 50%;
     margin-top: 66.66666666vh;
 }
+
+.alert{
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    height: 15vh;
+    background-color: #EACE7D;
+    border-top: 5px solid #9d802b;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.alert h1{
+    font-size: 1.5em;
+    text-align: center;
+}
+
+.links{
+    display: flex;
+    justify-content: space-around;
+}
+
+.links a{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+    border: 2px solid white;
+}

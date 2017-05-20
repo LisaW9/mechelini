@@ -1,5 +1,8 @@
-$( document ).ready(function() {
-    $(".menu_button_profile").click(function(){
+$(document).ready(function () {
+    var alertDiv = $('.alert');
+    alertDiv.css('bottom', '-15vh');
+
+    $(".menu_button_profile").click(function () {
         console.log("button click");
         //noinspection JSJQueryEfficiency
         $(".menu_button_profile").animate({
@@ -15,12 +18,12 @@ $( document ).ready(function() {
             transition: '0.3s',
             opacity: '0'
         });
-        setTimeout(function() {
+        setTimeout(function () {
             window.location.href = "/profile.php";
         }, 1000);
     });
 
-    $(".menu_button_cards").click(function(){
+    $(".menu_button_cards").click(function () {
         console.log("button click");
         //noinspection JSJQueryEfficiency
         $(".menu_button_cards").animate({
@@ -38,12 +41,12 @@ $( document ).ready(function() {
             transition: '0.3s',
             opacity: '0'
         });
-        setTimeout(function() {
+        setTimeout(function () {
             window.location.href = "/kaarten.php";
         }, 1000);
     });
 
-    $(".menu_button_trade").click(function(){
+    $(".menu_button_trade").click(function () {
         console.log("button click");
         //noinspection JSJQueryEfficiency
         $(".menu_button_trade").animate({
@@ -60,12 +63,12 @@ $( document ).ready(function() {
             transition: '0.3s',
             opacity: '0'
         });
-        setTimeout(function() {
+        setTimeout(function () {
             window.location.pathname = "/ruilplaza.php";
         }, 1000);
     });
 
-    $(".menu_button_progress").click(function(){
+    $(".menu_button_progress").click(function () {
         console.log("button click");
         //noinspection JSJQueryEfficiency
         $(".menu_button_progress").animate({
@@ -83,12 +86,12 @@ $( document ).ready(function() {
             transition: '0.3s',
             opacity: '0'
         });
-        setTimeout(function() {
+        setTimeout(function () {
             window.location.href = "../profile.php";
         }, 1000);
     });
 
-    $(".menu_button_friends").click(function(){
+    $(".menu_button_friends").click(function () {
         console.log("button click");
         //noinspection JSJQueryEfficiency
         $(".menu_button_friends").animate({
@@ -106,12 +109,12 @@ $( document ).ready(function() {
             transition: '0.3s',
             opacity: '0'
         });
-        setTimeout(function() {
+        setTimeout(function () {
             window.location.href = "../profile.php";
         }, 1000);
     });
 
-    $(".menu_button_logout").click(function(){
+    $(".menu_button_logout").click(function () {
         console.log("button click");
         //noinspection JSJQueryEfficiency
         $(".menu_button_logout").animate({
@@ -129,7 +132,7 @@ $( document ).ready(function() {
             transition: '0.3s',
             opacity: '0'
         });
-        setTimeout(function() {
+        setTimeout(function () {
             window.location.href = "../profile.php";
         }, 1000);
     });

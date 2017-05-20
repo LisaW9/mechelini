@@ -18,7 +18,7 @@ $card = $_GET['card'];
     <title>Kaarten</title>
 
     <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/main_style.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/kaart.css">
     <link rel="stylesheet" type="text/css" href="css/kaartDetail.css">
@@ -31,7 +31,9 @@ $card = $_GET['card'];
     <div class="fav"></div>
     <div class="kaart"
          style="background-image: url('img/kaarten/<?php echo str_replace('-', '_', $card) ?>.png');"></div>
-    <?php echo $_SESSION['id']; ?>
+    <div class="info">
+        div.
+    </div>
 </div>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="js/detail.js"></script>

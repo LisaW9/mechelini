@@ -17,7 +17,7 @@ spl_autoload_register(function ($class) {
     <meta name="msapplication-tap-highlight" content="no"/>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/main_style.css">
+    <link rel="stylesheet" type="text/css" href="css/main.css">
     <title>Mechelini</title>
 </head>
 <body>
@@ -27,8 +27,13 @@ spl_autoload_register(function ($class) {
 if ($_SESSION['loggedIn']) {
     echo '<script type="text/javascript" src="js/getLocation.js"></script>';
     $_SESSION['loggedIn'] = false;
-} ?>
+}
+if ($_SESSION['cardsReceived']) {
+    echo '<script type="text/javascript" src="js/alert.js"></script>';
+    $_SESSION['cardsReceived'] = false;
+}?>
 <div id="container">
+    <?php var_dump($_SESSION['cardsReceived']); ?>
     <nav>
         <ul>
             <li><a href="#" class="menu_button_profile"><img src="img/icons/profile_icon.svg" alt="profile_icon">
@@ -45,6 +50,14 @@ if ($_SESSION['loggedIn']) {
                     <p>Logout</p></a></li>
         </ul>
     </nav>
+
+    <div class="alert">
+        <h1>Je hebt nieuwe kaarten gekregen!</h1>
+        <div class="links">
+            <a href="#" class="open">Kaarten openen</a>
+            <a href="#" class="close">Later</a>
+        </div>
+    </div>
 </div>
 </body>
 </html>

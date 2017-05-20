@@ -1,7 +1,9 @@
 <?php
+session_start();
 spl_autoload_register(function ($class) {
     include_once("classes/" . $class . ".class.php");
 });
+
 class Cards
 {
     private $m_sName;
@@ -56,17 +58,19 @@ class Cards
     }
 
 
-    public static function getRandomCards($p_iAmount){
+    public static function getRandomCards($p_iAmount)
+    {
         $conn = Db::getInstance();
         $stmnt = $conn->prepare("SELECT * FROM cards ORDER BY (rand() * rarity) LIMIT :amount");
         $stmnt->bindParam(':amount', $p_iAmount, PDO::PARAM_INT);
         $stmnt->execute();
-        while($result = $stmnt->fetch(PDO::FETCH_OBJ)){
+        while ($result = $stmnt->fetch(PDO::FETCH_OBJ)) {
             Cards::saveUserCards($result->id);
         };
     }
 
-    public static function SaveUserCards($p_iCardId){
+    public static function SaveUserCards($p_iCardId)
+    {
         $conn = Db::getInstance();
         $stmnt = $conn->prepare("INSERT INTO user_cards(user_id, card_id) VALUES (:user_id, :card_id)");
         $stmnt->bindValue(':user_id', $_SESSION['id']);
@@ -75,16 +79,28 @@ class Cards
         $_SESSION['cardsReceived'] = true;
     }
 
-    /*public static function getUserCards(){
-        unset($_SESSION['userCards']);
-        $_SESSION['userCards'] = [];
+    public static function openUserCards($p_iCardId)
+    {
         $conn = Db::getInstance();
-        $stmnt = $conn->prepare("SELECT * FROM cards WHERE id in(SELECT card_id FROM user_cards WHERE user_id = :user_id) ORDER BY theme_ID, name");
+        $stmnt = $conn->prepare("UPDATE user_cards SET opened = 1 WHERE user_id = :user_ID AND card_id = :card_ID");
+        $stmnt->bindValue(':user_id', $_SESSION['id']);
+        $stmnt->bindValue(':card_id', $p_iCardId);
+        $stmnt->execute();
+    }
+
+    public static function checkForUnopenedCards()
+    {
+        $conn = Db::getInstance();
+        $stmnt = $conn->prepare("SELECT * FROM user_cards WHERE user_id = :user_ID AND opened = 0");
         $stmnt->bindValue(':user_id', $_SESSION['id']);
         $stmnt->execute();
-        while($result = $stmnt->fetch(PDO::FETCH_OBJ)){
-            array_push($_SESSION['userCards'], $result);
-        };
-    }*/
-
+        var_dump($stmnt->rowCount());
+        if ($stmnt->rowCount() > 0) {
+            $_SESSION['unopenedCards'] = [];
+            $_SESSION['cardsReceived'] = true;
+            while ($result = $stmnt->fetch(PDO::FETCH_OBJ)) {
+                array_push($_SESSION['unopenedCards'], $result);
+            };
+        }
+    }
 }
