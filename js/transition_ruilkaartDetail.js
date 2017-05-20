@@ -1,6 +1,5 @@
 $(document).ready(function () {
     $(".back").click(function () {
-        console.log("button click");
         //noinspection JSJQueryEfficiency
         $(".header").animate({
             zIndex: '1000',

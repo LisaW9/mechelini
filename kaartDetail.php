@@ -32,7 +32,6 @@ $card = $_GET['card'];
     <div class="kaart"
          style="background-image: url('img/kaarten/<?php echo str_replace('-', '_', $card) ?>.png');"></div>
     <div class="info">
-        div.
     </div>
 </div>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>

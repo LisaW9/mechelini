@@ -2,8 +2,24 @@
     padding-top: 0;
 }
 
+.close {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: white;
+    border: 3px solid #bf934a;
+    color: #bf934a;
+    text-align: center;
+    padding-top: 14px;
+    font-weight: bold;
+    top: 10px;
+    left: 10px;
+    position: absolute;
+}
+
 .kaarten {
     height: 100vh;
+    padding-top: 10vh;
 }
 
 .kaartDiv {
