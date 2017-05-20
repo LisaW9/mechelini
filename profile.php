@@ -7,6 +7,19 @@ if (!isset($_SESSION['user'])) {
 spl_autoload_register(function ($class) {
     include_once("classes/" . $class . ".class.php");
 });
+
+try{
+    //PROFILE
+    $userid = $_GET['id'];
+
+    $profile = new Profile();
+    $profile->setUserId($userid);
+    $user = $profile->Profile();
+
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -18,7 +31,9 @@ spl_autoload_register(function ($class) {
     <link rel="stylesheet" type="text/css" href="css/main_style.css">
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/profile.css">
-    <title>Profile</title>
+    <?php foreach ($user as $u):?>
+        <title><?php echo $u["username"]?></title>
+    <?php endforeach;?>
 </head>
 <body>
     <?php $page = 'Profile'; include_once('includes/header.inc.php'); ?>
