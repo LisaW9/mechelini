@@ -34,8 +34,12 @@ try {
 include_once('includes/header.inc.php'); ?>
 <div id="container">
     <div class="profile">
-        <img src="img/userImages/<?php echo $user->image ?>" alt="<?php echo 'profielfoto van ' . $user->firstName . ' ' . $user->lastName . ' is missing'; ?>">
-        <h1><?php echo $user->firstName . ' ' . $user->lastName; ?></h1>
+        <img src="img/userImages/<?php echo $user->image ?>" alt="<?php echo 'profielfoto van ' . $user->firstName . ' ' . $user->lastName . ' is missing'; ?>" class="profile_img">
+        <div class="profile_data">
+            <h1><?php echo $user->firstName . ' ' . $user->lastName; ?></h1>
+            <h2>ID:<?php echo $user->abbo_ID ?></h2>
+            <h2>Unlocks: </h2>
+        </div>
     </div>
 </div>
 </body>
