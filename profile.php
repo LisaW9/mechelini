@@ -12,7 +12,7 @@ try{
     //PROFILE
     $userid = $_GET['id'];
 
-    $profile = new Profile();
+    $profile = new User();
     $profile->setUserId($userid);
     $user = $profile->Profile();
 
@@ -31,12 +31,15 @@ try{
     <link rel="stylesheet" type="text/css" href="css/main_style.css">
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/profile.css">
-    <title>profile</title>
+    <?php foreach ($user as $u):?>
+        <title><?php echo $u["firstName"]?></title>
+    <?php endforeach;?>
 </head>
 <body>
     <?php $page = 'Profile'; include_once('includes/header.inc.php'); ?>
     <div id="container">
         <div class="profile">
+            <p><?php $userid ?></p>
             <img src="img/face_youtube%20250x250.png" alt="missing_img">
             <h1>Michiel Janssens</h1>
         </div>

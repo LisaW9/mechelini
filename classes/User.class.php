@@ -127,6 +127,7 @@ class User
         $statement->execute();
         $result = $statement->fetch(PDO::FETCH_ASSOC);
 
+        session_start();
         $_SESSION["id"] = $result["id"];
         $_SESSION['user'] = $this->m_email;
         Cards::getRandomCards(5);
@@ -151,6 +152,7 @@ class User
 
         foreach ($results as $row) {
             if (password_verify($this->m_password, $row['password'])) {
+                session_start();
                 $_SESSION["id"] = $row["id"];
                 $_SESSION['user'] = $this->m_email;
                 $_SESSION['loggedIn'] = true;
