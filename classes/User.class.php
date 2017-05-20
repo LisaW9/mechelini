@@ -3,6 +3,7 @@ session_start();
 spl_autoload_register(function ($class) {
     include_once($class . ".class.php");
 });
+
 class User
 {
     private $m_email;
@@ -10,23 +11,6 @@ class User
     private $m_firstname;
     private $m_lastname;
     private $m_abbonement;
-    private $userId;
-
-    /**
-     * @return mixed
-     */
-    public function getUserId()
-    {
-        return $this->userId;
-    }
-
-    /**
-     * @param mixed $userId
-     */
-    public function setUserId($userId)
-    {
-        $this->userId = $userId;
-    }
 
     /**
      * SETTERS
@@ -154,7 +138,6 @@ class User
             if (password_verify($this->m_password, $row['password'])) {
                 session_start();
                 $_SESSION["id"] = $row["id"];
-                $_SESSION['user'] = $this->m_email;
                 $_SESSION['loggedIn'] = true;
                 Cards::checkForUnopenedCards();
                 header("Location: ./index.php");
@@ -165,15 +148,13 @@ class User
         return $res;
     }
 
-    public function Profile(){
+    public static function getProfile()
+    {
         $conn = Db::getInstance();
-
         $stment = $conn->prepare("SELECT * FROM users WHERE id = :id");
-        $stment->bindValue(':id', $this->userId);
+        $stment->bindValue(':id', $_SESSION['id']);
         $stment->execute();
-        $user = $stment->fetchAll(PDO::FETCH_ASSOC);
-
+        $user = $stment->fetch(PDO::FETCH_OBJ);
         return $user;
     }
-
 }

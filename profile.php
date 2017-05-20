@@ -1,6 +1,6 @@
 <?php
 session_start();
-if (!isset($_SESSION['user'])) {
+if (!isset($_SESSION['id'])) {
     header('location: login.php');
 }
 
@@ -8,13 +8,9 @@ spl_autoload_register(function ($class) {
     include_once("classes/" . $class . ".class.php");
 });
 
-try{
+try {
     //PROFILE
-    $userid = $_GET['id'];
-
-    $profile = new User();
-    $profile->setUserId($userid);
-    $user = $profile->Profile();
+    $user = User::getProfile();
 
 } catch (Exception $e) {
     echo $e->getMessage();
@@ -31,18 +27,17 @@ try{
     <link rel="stylesheet" type="text/css" href="css/main_style.css">
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/profile.css">
-    <?php foreach ($user as $u):?>
-        <title><?php echo $u["firstName"]?></title>
-    <?php endforeach;?>
+    <title><?php echo $user->firstName; ?></title>
 </head>
 <body>
-    <?php $page = 'Profile'; include_once('includes/header.inc.php'); ?>
-    <div id="container">
-        <div class="profile">
-            <p><?php $userid ?></p>
-            <img src="img/face_youtube%20250x250.png" alt="missing_img">
-            <h1>Michiel Janssens</h1>
-        </div>
+<?php $page = 'Profile';
+include_once('includes/header.inc.php'); ?>
+<div id="container">
+    <div class="profile">
+        <p><?php $userid ?></p>
+        <img src="img/face_youtube%20250x250.png" alt="missing_img">
+        <h1><?php echo $user->firstName . ' ' . $user->lastName; ?></h1>
     </div>
+</div>
 </body>
 </html>
