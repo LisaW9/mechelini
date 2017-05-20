@@ -115,4 +115,19 @@ class Cards
             echo "</div>";
         };
     }
+
+    public static function getClosedCards()
+    {
+        $conn = Db::getInstance();
+        $statement = $conn->prepare('SELECT c.name, c.image FROM cards c INNER JOIN user_cards uc ON c.id = uc.card_id WHERE uc.user_id = :user_id AND uc.opened = 0 ORDER BY uc.id');
+        $statement->bindValue(":user_id", $_SESSION['id']);
+        $statement->execute();
+        while ($result = $statement->fetch(PDO::FETCH_OBJ)) {
+            echo "<div class='kaartDiv'>";
+            echo "<div class='closed'>";
+            include("../includes/kaart.inc.php");
+            echo "</div>";
+            echo "</div>";
+        };
+    }
 }

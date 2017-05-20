@@ -87,7 +87,7 @@ $(document).ready(function () {
             opacity: '0'
         });
         setTimeout(function () {
-            window.location.href = "../profile.php";
+            window.location.href = "";
         }, 1000);
     });
 
@@ -110,7 +110,7 @@ $(document).ready(function () {
             opacity: '0'
         });
         setTimeout(function () {
-            window.location.href = "../profile.php";
+            window.location.href = "";
         }, 1000);
     });
 
@@ -133,7 +133,7 @@ $(document).ready(function () {
             opacity: '0'
         });
         setTimeout(function () {
-            window.location.href = "../profile.php";
+            window.location.href = "";
         }, 1000);
     });
 });

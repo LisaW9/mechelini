@@ -53,9 +53,9 @@ $(document).ready(function () {
 
     // AJAX functie
     function filter(filter) {
-        $.post('ajax/filter.php', {'filter': filter}, function (data) {
+        $.post('ajax/cards.php', {'filter': filter}, function (data) {
             $(".kaarten").children().remove();
-            $(".kaarten").append(data); //append data into #results element
+            $(".kaarten").append(data);
         });
     }
 });

@@ -25,12 +25,10 @@ spl_autoload_register(function ($class) {
 </head>
 <body>
 <div id="container">
-    <div class="kaarten"><?php
-        $query = 'SELECT c.name, c.image, count(uc.card_id) as "amount" FROM cards c INNER JOIN user_cards uc ON c.id = uc.card_id WHERE uc.user_id = :user_id and uc.open = 0 GROUP BY uc.card_id ORDER BY uc.id';
-        Cards::getClosedCards($query);
-        ?></div>
+    <div class="kaarten"></div>
 </div>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="js/transition_back.js"></script>
+<script type="text/javascript" src="js/open.js"></script>
 </body>
 </html>
