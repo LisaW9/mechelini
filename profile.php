@@ -31,9 +31,7 @@ try{
     <link rel="stylesheet" type="text/css" href="css/main_style.css">
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/profile.css">
-    <?php foreach ($user as $u):?>
-        <title><?php echo $u["username"]?></title>
-    <?php endforeach;?>
+    <title>profile</title>
 </head>
 <body>
     <?php $page = 'Profile'; include_once('includes/header.inc.php'); ?>
