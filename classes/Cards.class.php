@@ -102,4 +102,17 @@ class Cards
             }
         }
     }
+
+    public static function getCards($query)
+    {
+        $conn = Db::getInstance();
+        $statement = $conn->prepare($query);
+        $statement->bindValue(":user_id", $_SESSION['id']);
+        $statement->execute();
+        while ($result = $statement->fetch(PDO::FETCH_OBJ)) {
+            echo "<div class='kaartDiv'>";
+            include("../includes/kaart.inc.php");
+            echo "</div>";
+        };
+    }
 }
