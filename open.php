@@ -21,6 +21,7 @@ spl_autoload_register(function ($class) {
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/kaart.css">
     <link rel="stylesheet" type="text/css" href="css/kaarten.css">
+    <link rel="stylesheet" type="text/css" href="css/open.css">
 
 </head>
 <body>

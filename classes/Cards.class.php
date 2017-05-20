@@ -124,8 +124,9 @@ class Cards
         $statement->execute();
         while ($result = $statement->fetch(PDO::FETCH_OBJ)) {
             echo "<div class='kaartDiv'>";
-            echo "<div class='closed'>";
+            echo "<div class='flipper'>";
             include("../includes/kaart.inc.php");
+            echo "<div class='closed' style=\"background-image:url('img/kaarten/closed.png')\"></div>";
             echo "</div>";
             echo "</div>";
         };

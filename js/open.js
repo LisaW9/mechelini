@@ -1,10 +1,6 @@
-$(document).ready(function(){
-    openCards();
+$(document).ready(function () {
+    $.post('ajax/cards.php', {'openCards': 'true'}, function (data) {
+        $(".kaarten").append(data);
+    });
 
-    // AJAX functie
-    function openCards() {
-        $.post('ajax/cards.php', {'openCards': 'true'}, function (data) {
-            $(".kaarten").append(data);
-        });
-    }
 });
