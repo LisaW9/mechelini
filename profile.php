@@ -34,7 +34,7 @@ try {
 include_once('includes/header.inc.php'); ?>
 <div id="container">
     <div class="profile">
-        <img src="<?php echo $user->image ?>" alt="<?php echo 'profielfoto van ' . $user->firstName . ' ' . $user->lastName . ' is missing'; ?>">
+        <img src="img/userImages/<?php echo $user->image ?>" alt="<?php echo 'profielfoto van ' . $user->firstName . ' ' . $user->lastName . ' is missing'; ?>">
         <h1><?php echo $user->firstName . ' ' . $user->lastName; ?></h1>
     </div>
 </div>
