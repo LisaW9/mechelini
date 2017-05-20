@@ -12,12 +12,12 @@ $(document).ready(function () {
         longitude = 4.484692;
 
         if (Math.abs(compareLat - latitude).toFixed(6) < 0.001 && Math.abs(compareLon - longitude).toFixed(6) < 0.001) {
-            alert('Je bent in de Gym!!');
+            //alert('Je bent in de Gym!!');
             $.post("ajax/location.php", function (data) {
-                alert(data);
+                //alert(data);
             });
         } else {
-            alert('Begeef je naar de Gym om kaarten te ontvangen');
+            //alert('Begeef je naar de Gym om kaarten te ontvangen');
         }
     });
 });

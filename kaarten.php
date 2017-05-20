@@ -17,7 +17,7 @@ spl_autoload_register(function ($class) {
     <title>Kaarten</title>
 
     <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/main_style.css">
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/kaart.css">
     <link rel="stylesheet" type="text/css" href="css/kaarten.css">

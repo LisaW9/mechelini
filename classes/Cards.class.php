@@ -92,15 +92,14 @@ class Cards
     {
         $conn = Db::getInstance();
         $stmnt = $conn->prepare("SELECT * FROM user_cards WHERE user_id = :user_ID AND opened = 0");
-        $stmnt->bindValue(':user_id', $_SESSION['id']);
+        $stmnt->bindValue(':user_ID', $_SESSION['id']);
         $stmnt->execute();
-        var_dump($stmnt->rowCount());
         if ($stmnt->rowCount() > 0) {
             $_SESSION['unopenedCards'] = [];
             $_SESSION['cardsReceived'] = true;
             while ($result = $stmnt->fetch(PDO::FETCH_OBJ)) {
                 array_push($_SESSION['unopenedCards'], $result);
-            };
+            }
         }
     }
 }

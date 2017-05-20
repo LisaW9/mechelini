@@ -14,12 +14,8 @@ try {
         $user->setMEmail($email);
         $user->setMPassword($password);
 
-        if ($user->Login()) {
-            //Start session with email as sessionvariable
-            $user->Login();
-        } else {
-            $error = "Looks like something went wrong";
-        }
+        //Start session with email as sessionvariable
+        $user->Login();
     }
 } catch (Exception $e) {
     $error = $e->getMessage();
@@ -33,7 +29,7 @@ try {
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/main_style.css">
     <link rel="stylesheet" type="text/css" href="css/formulier.css">
     <title>Mechelini</title>
 </head>

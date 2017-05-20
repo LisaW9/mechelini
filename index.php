@@ -17,7 +17,7 @@ spl_autoload_register(function ($class) {
     <meta name="msapplication-tap-highlight" content="no"/>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
     <link rel="stylesheet" type="text/css" href="css/reset.css">
-    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <link rel="stylesheet" type="text/css" href="css/main_style.css">
     <title>Mechelini</title>
 </head>
 <body>
@@ -33,7 +33,6 @@ if ($_SESSION['cardsReceived']) {
     $_SESSION['cardsReceived'] = false;
 }?>
 <div id="container">
-    <?php var_dump($_SESSION['cardsReceived']); ?>
     <nav>
         <ul>
             <li><a href="#" class="menu_button_profile"><img src="img/icons/profile_icon.svg" alt="profile_icon">
