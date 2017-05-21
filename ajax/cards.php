@@ -24,6 +24,7 @@ if (isset($_POST["filter"])) {
         Cards::getClosedCards();
         echo '<script src="js/flipCards.js"></script>';
     } else{
+        $_SESSION['cardsReceived'] = false;
         Cards::openUserCards($_POST['openCards']);
     }
 }

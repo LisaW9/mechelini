@@ -1,6 +1,7 @@
 $(document).ready(function () {
     var alertDiv = $('.alert');
     alertDiv.css('bottom', '-15vh');
+    alertDiv.hide();
 
     $(".menu_button_profile").click(function () {
         console.log("button click");

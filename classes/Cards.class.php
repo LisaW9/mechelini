@@ -4,60 +4,8 @@ spl_autoload_register(function ($class) {
     include_once("classes/" . $class . ".class.php");
 });
 
-class Cards
+abstract class Cards
 {
-    private $m_sName;
-    private $m_iRarity;
-    private $m_sImage;
-    private $m_iTheme_ID;
-
-    /**
-     * SETTERS
-     */
-    public function setMSName($m_sName)
-    {
-        $this->m_sName = $m_sName;
-    }
-
-    public function setMIRarity($m_iRarity)
-    {
-        $this->m_iRarity = $m_iRarity;
-    }
-
-    public function setMSImage($m_sImage)
-    {
-        $this->m_sImage = $m_sImage;
-    }
-
-    public function setMIThemeID($m_iTheme_ID)
-    {
-        $this->m_iTheme_ID = $m_iTheme_ID;
-    }
-
-    /*
-     * GETTERS
-     */
-    public function getMSName()
-    {
-        return $this->m_sName;
-    }
-
-    public function getMIRarity()
-    {
-        return $this->m_iRarity;
-    }
-
-    public function getMSImage()
-    {
-        return $this->m_sImage;
-    }
-
-    public function getMIThemeID()
-    {
-        return $this->m_iTheme_ID;
-    }
-
-
     public static function getRandomCards($p_iAmount)
     {
         $conn = Db::getInstance();
@@ -94,11 +42,7 @@ class Cards
         $stmnt->bindValue(':user_ID', $_SESSION['id']);
         $stmnt->execute();
         if ($stmnt->rowCount() > 0) {
-            $_SESSION['unopenedCards'] = [];
             $_SESSION['cardsReceived'] = true;
-            while ($result = $stmnt->fetch(PDO::FETCH_OBJ)) {
-                array_push($_SESSION['unopenedCards'], $result);
-            }
         }
     }
 

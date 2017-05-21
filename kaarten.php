@@ -4,6 +4,10 @@ if (!isset($_SESSION['id'])) {
     header('location: login.php');
 }
 
+if($_SESSION['cardsReceived']){
+    header('location: open.php');
+}
+
 spl_autoload_register(function ($class) {
     include_once("classes/" . $class . ".class.php");
 });

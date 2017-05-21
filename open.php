@@ -7,6 +7,7 @@ if (!isset($_SESSION['id'])) {
 spl_autoload_register(function ($class) {
     include_once("classes/" . $class . ".class.php");
 });
+
 ?><!doctype html>
 <html lang="en">
 <head>

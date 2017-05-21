@@ -30,7 +30,6 @@ if ($_SESSION['loggedIn']) {
 }
 if ($_SESSION['cardsReceived']) {
     echo '<script type="text/javascript" src="js/alert.js"></script>';
-    $_SESSION['cardsReceived'] = false;
 }?>
 <div id="container">
     <nav>
