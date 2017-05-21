@@ -74,9 +74,6 @@ abstract class Cards
     }
 
     public static function tradable($p_iId, $p_iTrade){
-        echo $p_iId;
-        echo $p_iTrade;
-        exit();
         $conn = Db::getInstance();
         $statement = $conn->prepare('UPDATE user_cards SET trade = :trade WHERE id = :id');
         $statement->bindValue(":id", $p_iId);

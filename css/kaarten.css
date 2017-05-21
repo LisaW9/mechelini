@@ -11,6 +11,9 @@
     width: 50%;
     height: 150px;
     margin: 20px 0;
+    background-color: #900a0c;
+    border-radius: 60%;
+    box-shadow: 0 0 100px #900a0c;
 }
 
 .kaart {

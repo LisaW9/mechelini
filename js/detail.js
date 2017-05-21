@@ -17,7 +17,7 @@ $(document).ready(function () {
             array = JSON.parse(data);
             that.removeClass(array[0]);
             that.addClass(array[1]);
-            that.text = array[2];
+            that.text(array[2]);
         });
     });
 });
