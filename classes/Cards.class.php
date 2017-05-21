@@ -48,11 +48,14 @@ abstract class Cards
 
     public static function getCards($query)
     {
+        unset($_SESSION['cards']);
+        $_SESSION['cards'] = [];
         $conn = Db::getInstance();
         $statement = $conn->prepare($query);
         $statement->bindValue(":user_id", $_SESSION['id']);
         $statement->execute();
         while ($result = $statement->fetch(PDO::FETCH_OBJ)) {
+            array_push($_SESSION['cards'], $result);
             echo "<div class='kaartDiv'>";
             include("../includes/kaart.inc.php");
             echo "</div>";

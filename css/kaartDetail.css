@@ -23,6 +23,39 @@
     top: 50px;
 }
 
-.fav {
+.info {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    top: 65vh;
+    height: 30vh;
+    width: 60vw;
+    left: 50%;
+    transform: translateX(-50%);
+}
 
+.amount, .rarity {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+p {
+    font-size: 1.5em;
+}
+
+.trade {
+    align-self: center;
+}
+
+.button {
+    background-color: #CF3C3E;
+    border: none;
+    border-radius: 5px;
+    padding: 20px;
+    color: white;
+    font-weight: bold;
+    font-size: 1em;
+    margin-bottom: 20px;
 }
