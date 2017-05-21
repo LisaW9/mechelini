@@ -10,7 +10,7 @@ spl_autoload_register(function ($class) {
 
 try {
     //PROFILE
-    $user = User::getProfile();
+    $user = User::getProfile($_SESSION['id']);
 
 } catch (Exception $e) {
     echo $e->getMessage();

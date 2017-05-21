@@ -21,4 +21,18 @@ class Trade
         $statement->bindValue(':card_id', $p_iCard_id);
         $statement->execute();
     }
+
+    public static function getTradingCards($query)
+    {
+        unset($_SESSION['tradingCards']);
+        $_SESSION['tradingCards'] = [];
+        $conn = Db::getInstance();
+        $statement = $conn->prepare($query);
+        $statement->execute();
+        while ($result = $statement->fetch(PDO::FETCH_OBJ)) {
+            array_push($_SESSION['tradingCards'], $result);
+            $user = User::getProfile($result->user_id);
+            include("../includes/ruilkaart.inc.php");
+        };
+    }
 }

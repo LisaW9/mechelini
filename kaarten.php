@@ -35,8 +35,8 @@ include_once('includes/header.inc.php'); ?>
 <div id="container">
     <div class="filters">
         <div class="filter amount first">#</div>
-        <div class="filter abc second">a-z</div>
-        <div class="filter time active">L</div>
+        <div class="filter time second">L</div>
+        <div class="filter abc active">a-z</div>
     </div>
 
     <div class="kaarten"></div>
@@ -45,5 +45,16 @@ include_once('includes/header.inc.php'); ?>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="js/transition_back.js"></script>
 <script type="text/javascript" src="js/filter.js"></script>
+<script>
+    //Kaarten ophalen
+    filter('abc');
+    // AJAX functie
+    function filter(filter) {
+        $.post('ajax/cards.php', {'filter': filter}, function (data) {
+            $(".kaarten").children().remove();
+            $(".kaarten").append(data);
+        });
+    }
+</script>
 </body>
 </html>

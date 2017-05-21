@@ -12,10 +12,10 @@ if (isset($_POST["filter"])) {
             $query = 'SELECT c.id, c.name, c.image, c.rarity, uc.trade, uc.id AS "ucId" FROM  cards c INNER JOIN user_cards uc ON c.id = uc.card_id WHERE uc.user_id = :user_id AND uc.opened = 1 GROUP BY uc.id ORDER BY count(uc.card_id) DESC';
             break;
         case 'abc':
-            $query = 'SELECT c.id, c.name, c.image, c.rarity, uc.trade, uc.id AS "ucId" FROM user_cards uc INNER JOIN cards c ON uc.card_id = c.id WHERE uc.user_id = :user_id AND uc.opened = 1 GROUP BY uc.id ORDER BY c.name';
+            $query = 'SELECT c.id, c.name, c.image, c.rarity, uc.trade, uc.id AS "ucId" FROM user_cards uc INNER JOIN cards c ON uc.card_id = c.id WHERE uc.user_id = :user_id AND uc.opened = 1 ORDER BY c.name';
             break;
         case 'time':
-            $query = 'SELECT c.id, c.name, c.image, c.rarity, uc.trade, uc.id AS "ucId" FROM cards c INNER JOIN user_cards uc ON c.id = uc.card_id WHERE uc.user_id = :user_id AND uc.opened = 1 GROUP BY uc.id ORDER BY uc.id';
+            $query = 'SELECT c.id, c.name, c.image, c.rarity, uc.trade, uc.id AS "ucId" FROM cards c INNER JOIN user_cards uc ON c.id = uc.card_id WHERE uc.user_id = :user_id AND uc.opened = 1 ORDER BY uc.id';
             break;
     }
     Cards::getCards($query);

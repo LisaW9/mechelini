@@ -1,6 +1,4 @@
 $(document).ready(function () {
-    //Kaarten ophalen
-    filter('time');
 
     //Filter functies
     var open = false;
@@ -50,12 +48,4 @@ $(document).ready(function () {
         }
 
     });
-
-    // AJAX functie
-    function filter(filter) {
-        $.post('ajax/cards.php', {'filter': filter}, function (data) {
-            $(".kaarten").children().remove();
-            $(".kaarten").append(data);
-        });
-    }
 });

@@ -148,11 +148,11 @@ class User
         return $res;
     }
 
-    public static function getProfile()
+    public static function getProfile($p_iId)
     {
         $conn = Db::getInstance();
         $stment = $conn->prepare("SELECT * FROM users WHERE id = :id");
-        $stment->bindValue(':id', $_SESSION['id']);
+        $stment->bindValue(':id', $p_iId);
         $stment->execute();
         $user = $stment->fetch(PDO::FETCH_OBJ);
         return $user;
