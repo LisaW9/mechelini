@@ -77,4 +77,13 @@ abstract class Cards
             echo "</div>";
         };
     }
+
+    public static function getCardsProgress(){
+        $conn = Db::getInstance();
+        $stmnt = $conn->prepare("SELECT * FROM user_cards WHERE user_id = :user_ID");
+        $stmnt->bindValue(':user_ID', $_SESSION['id']);
+        $stmnt->execute();
+        $cardProgress = $stmnt->fetch(PDO::FETCH_ASSOC);
+        return $cardProgress;
+    }
 }

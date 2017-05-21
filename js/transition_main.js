@@ -88,7 +88,7 @@ $(document).ready(function () {
             opacity: '0'
         });
         setTimeout(function () {
-            window.location.href = "";
+            window.location.href = "/progress.php";
         }, 1000);
     });
 
