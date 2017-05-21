@@ -19,8 +19,6 @@ try {
     echo $e->getMessage();
 }
 
-echo $_SESSION['id'];
-
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -43,7 +41,7 @@ include_once('includes/header.inc.php'); ?>
         <div class="progress_block">
             <h2>naam</h2>
             <h2>percentage</h2>
-            <p><?php echo $c["user_id"] ?></p>
+            <p><?php echo $c["name"] ?></p>
         </div>
         <?php endforeach;?>
     </div>
