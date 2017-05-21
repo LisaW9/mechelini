@@ -62,14 +62,26 @@ abstract class Cards
         };
     }
 
-    public static function countCards($p_iCard_id){
+    public static function countCards($p_iCard_id)
+    {
         $conn = Db::getInstance();
-        $statement = $conn->prepare('SELECT count(*) as "amount" FROM user_cards WHERE card_id = :card_id AND user_id = :user_id');
+        $statement = $conn->prepare('SELECT count(*) AS "amount" FROM user_cards WHERE card_id = :card_id AND user_id = :user_id');
         $statement->bindValue(":user_id", $_SESSION['id']);
         $statement->bindValue(":card_id", $p_iCard_id);
         $statement->execute();
         $result = $statement->fetch(PDO::FETCH_OBJ);
-        return $result->amount;
+        echo($result->amount);
+    }
+
+    public static function tradable($p_iId, $p_iTrade){
+        echo $p_iId;
+        echo $p_iTrade;
+        exit();
+        $conn = Db::getInstance();
+        $statement = $conn->prepare('UPDATE user_cards SET trade = :trade WHERE id = :id');
+        $statement->bindValue(":id", $p_iId);
+        $statement->bindValue(":trade", $p_iTrade);
+        $statement->execute();
     }
 
     public static function getClosedCards()
@@ -88,7 +100,8 @@ abstract class Cards
         };
     }
 
-    public static function getCardsProgress(){
+    public static function getCardsProgress()
+    {
         $conn = Db::getInstance();
         $stmnt = $conn->prepare("SELECT t.*, count(uc.card_id), uc.user_id FROM themes t INNER JOIN user_cards uc WHERE user_id = :user_ID");
         $stmnt->bindValue(':user_ID', $_SESSION['id']);

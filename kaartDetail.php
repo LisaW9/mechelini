@@ -7,7 +7,13 @@ if (!isset($_SESSION['id'])) {
 spl_autoload_register(function ($class) {
     include_once("classes/" . $class . ".class.php");
 });
-$card = $_GET['card'];
+$card = '';
+foreach ($_SESSION['cards'] as $c) {
+    if ($_GET['card'] == $c->ucId) {
+        $card = $c;
+        break;
+    }
+}
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -30,39 +36,30 @@ $card = $_GET['card'];
     <div class="close">X</div>
     <div class="fav"></div>
     <div class="kaart"
-         style="background-image: url('img/kaarten/<?php echo str_replace('-', '_', $card) ?>.png');"></div>
+         style="background-image: url('img/kaarten/<?php echo $card->image ?>');"></div>
     <div class="info">
         <div class="rarity">
             <p>RARITY</p>
-            <p><?php foreach ($_SESSION['cards'] as $c) {
-                    if (str_replace('-', ' ', $card) == $c->name) {
-                        switch ($c->rarity) {
-                            case 1:
-                                echo 'Common';
-                                break;
-                            case 2:
-                                echo 'Rare';
-                                break;
-                            case 3:
-                                echo 'Very rare';
-                                break;
-                        }
+            <p><?php switch ($card->rarity) {
+                    case 1:
+                        echo 'Common';
                         break;
-                    }
+                    case 2:
+                        echo 'Rare';
+                        break;
+                    case 3:
+                        echo 'Very rare';
+                        break;
                 } ?></p>
         </div>
         <div class="amount">
             <p>AMOUNT</p>
-            <p><?php foreach ($_SESSION['cards'] as $c) {
-                    if (str_replace('-', ' ', $card) == $c->name) {
-                        echo Cards::countCards(1);
-                        break;
-                    }
-                }?></p>
+            <p><?php
+                Cards::countCards($card->id);
+                ?></p>
         </div>
-
         <div class="trade">
-            <button class="button">TRADE</button>
+            <button class="tradeBtn <?php echo $card->trade == 1 ? 'tradeTrue':'tradeFalse' ?>" id="<?php echo $card->ucId; ?>"><?php echo $card->trade == 1 ? "Don't trade":"Trade" ?></button>
         </div>
     </div>
 </div>

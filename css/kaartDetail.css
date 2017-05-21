@@ -49,8 +49,7 @@ p {
     align-self: center;
 }
 
-.button {
-    background-color: #CF3C3E;
+.tradeBtn {
     border: none;
     border-radius: 5px;
     padding: 20px;
@@ -58,4 +57,12 @@ p {
     font-weight: bold;
     font-size: 1em;
     margin-bottom: 20px;
+}
+
+.tradeTrue{
+    background-color: #900a0c;
+}
+
+.tradeFalse{
+    background-color: #CF3C3E;
 }
