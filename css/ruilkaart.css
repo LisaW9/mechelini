@@ -1,16 +1,19 @@
 .ruilkaart {
     width: 50%;
-    height: 300px;
+    height: 350px;
+    display: flex;
+    flex-direction: column;
 }
 
-.info p {
-    color: white;
-    font-family: montserrat;
-    font-size: 0.7em;
+.info{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    height: 40%;
 }
 
 .user, .date, .rarity {
-    width: 60%;
+    width: 70%;
     margin: auto;
     display: flex;
     justify-content: space-between;
