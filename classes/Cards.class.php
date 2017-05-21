@@ -119,7 +119,7 @@ abstract class Cards
         $stmntCheck->execute();
 
         if ($stmntCheck->fetchColumn()) {
-            $stmnt = $conn->prepare("UPDATE completed SET amount = amount + 1 WHERE id = :id and theme_id = $themeField");
+            $stmnt = $conn->prepare("UPDATE completed SET amount = (amount + 1) WHERE user_id = :user_id and theme_id = $themeField");
             $stmnt->bindValue(':user_id', $_SESSION['id']);
             $stmnt->execute();
         } else {
