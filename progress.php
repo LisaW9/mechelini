@@ -38,10 +38,9 @@ include_once('includes/header.inc.php'); ?>
 <div id="container">
     <div class="progress">
         <?php foreach ($cardProgress as $c):?>
-        <div class="progress_block">
-            <h2>naam</h2>
-            <h2>percentage</h2>
-            <p><?php echo $c["name"] ?></p>
+        <div class="progress_block <?php if($c["theme_ID"]% 2 == 0){echo "even";}else{echo "odd";}?>">
+            <h1><?php echo $c["name"] ?></h1>
+            <h2>je hebt <?php echo $c["amountOfCollectedCards"] ?> van de 20 kaarten voor deze categorie</h2>
         </div>
         <?php endforeach;?>
     </div>

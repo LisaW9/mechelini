@@ -6,7 +6,22 @@
 }
 
 .progress_block{
-    background-color: red;
-    padding: 15px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    padding-left: 5%;
+    padding-right: 5%;
     text-align: center;
+}
+
+.progress_block h1{
+    padding-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.even{
+    background-color: #b73332;
+}
+
+.odd{
+    background-color: #dd3736;
 }
