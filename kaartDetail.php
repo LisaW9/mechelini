@@ -55,10 +55,10 @@ $card = $_GET['card'];
             <p>AMOUNT</p>
             <p><?php foreach ($_SESSION['cards'] as $c) {
                     if (str_replace('-', ' ', $card) == $c->name) {
-                        echo($c->amount);
+                        echo Cards::countCards(1);
                         break;
                     }
-                }var_dump($_SESSION['cards']); ?></p>
+                }?></p>
         </div>
 
         <div class="trade">

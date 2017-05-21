@@ -62,6 +62,16 @@ abstract class Cards
         };
     }
 
+    public static function countCards($p_iCard_id){
+        $conn = Db::getInstance();
+        $statement = $conn->prepare('SELECT count(*) as "amount" FROM user_cards WHERE card_id = :card_id AND user_id = :user_id');
+        $statement->bindValue(":user_id", $_SESSION['id']);
+        $statement->bindValue(":card_id", $p_iCard_id);
+        $statement->execute();
+        $result = $statement->fetch(PDO::FETCH_OBJ);
+        return $result->amount;
+    }
+
     public static function getClosedCards()
     {
         $conn = Db::getInstance();
