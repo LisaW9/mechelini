@@ -111,4 +111,22 @@ abstract class Cards
         $cardProgress = $stmnt->fetchAll(PDO::FETCH_ASSOC);
         return $cardProgress;
     }
+
+    public static function resetCards($themeField){
+        $conn = Db::getInstance();
+        $stmntCheck = $conn->prepare("select * from completed where user_id = :user_id and theme_id = $themeField LIMIT 1");
+        $stmntCheck->bindValue(':user_id', $_SESSION['id']);
+        $stmntCheck->execute();
+
+        if ($stmntCheck->fetchColumn()) {
+            echo "we updaten je";
+        } else {
+            echo "we voegen je toe";
+
+            $stmnt = $conn->prepare("insert into completed (user_id, theme_id, amount) values (:user_id, $themeField, 1)");
+            $stmnt->bindValue(':user_id', $_SESSION['id']);
+            $stmnt->execute();
+        }
+
+    }
 }
