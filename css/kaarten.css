@@ -11,9 +11,6 @@
     width: 50%;
     height: 150px;
     margin: 20px 0;
-    background-color: #900a0c;
-    border-radius: 60%;
-    box-shadow: 0 0 100px #900a0c;
 }
 
 .kaart {
@@ -21,22 +18,18 @@
     height: 100%;
     margin: auto;
 }
-
-.amountOfCards{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: #bf934a;
-    color: white;
-    text-align: center;
-    padding-top: 10px;
-    font-weight: bold;
-    margin-top: -10px;
-    margin-left: 30px;
+.shadow{
+    width: 150px;
+    height: 150px;
+    background-color: #900a0c;
+    border-radius: 60%;
+    filter: blur(30px);
+    margin: auto;
 }
 
 .filters{
     position: absolute;
+    z-index: 1000;
     width: 150px;
     top: 80px;
     right: 10px;
