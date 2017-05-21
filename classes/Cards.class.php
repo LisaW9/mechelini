@@ -100,7 +100,7 @@ abstract class Cards
     public static function getCardsProgress()
     {
         $conn = Db::getInstance();
-        $stmnt = $conn->prepare("SELECT t.name, c.theme_ID, count(uc.card_id) as amountOfCollectedCards, uc.user_id
+        $stmnt = $conn->prepare("SELECT t.name, c.theme_ID, count(DISTINCT uc.card_id) as amountOfCollectedCards, uc.user_id
                                 FROM themes t 
                                 INNER JOIN cards c on t.id = c.theme_ID
                                 inner join user_cards uc on c.id = uc.card_id
