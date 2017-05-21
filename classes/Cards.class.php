@@ -100,7 +100,7 @@ abstract class Cards
     public static function getCardsProgress()
     {
         $conn = Db::getInstance();
-        $stmnt = $conn->prepare("SELECT t.name, c.theme_ID, count(DISTINCT uc.card_id) as amountOfCollectedCards, uc.user_id
+        $stmnt = $conn->prepare("SELECT t.name, c.theme_ID as themeID, count(DISTINCT uc.card_id) as amountOfCollectedCards, uc.user_id
                                 FROM themes t 
                                 INNER JOIN cards c on t.id = c.theme_ID
                                 inner join user_cards uc on c.id = uc.card_id
@@ -114,15 +114,15 @@ abstract class Cards
 
     public static function resetCards($themeField){
         $conn = Db::getInstance();
-        $stmntCheck = $conn->prepare("select * from completed where user_id = :user_id and theme_id = $themeField LIMIT 1");
+        $stmntCheck = $conn->prepare("select count(*) from completed where user_id = :user_id and theme_id = $themeField LIMIT 1");
         $stmntCheck->bindValue(':user_id', $_SESSION['id']);
         $stmntCheck->execute();
 
         if ($stmntCheck->fetchColumn()) {
-            echo "we updaten je";
+            $stmnt = $conn->prepare("UPDATE completed SET amount = amount + 1 WHERE id = :id and theme_id = $themeField");
+            $stmnt->bindValue(':user_id', $_SESSION['id']);
+            $stmnt->execute();
         } else {
-            echo "we voegen je toe";
-
             $stmnt = $conn->prepare("insert into completed (user_id, theme_id, amount) values (:user_id, $themeField, 1)");
             $stmnt->bindValue(':user_id', $_SESSION['id']);
             $stmnt->execute();

@@ -22,8 +22,10 @@ try {
 foreach ($cardProgress as $c):
 
     try {
-        if (!empty($_POST["reset_collection" . $c["name"]])) {
-            $selectedField = $_POST["reset_collection" . $c["name"]];
+        if (!empty($_POST[$c["themeID"]])) {
+            $selectedField = $_POST[$c["themeID"]];
+
+            echo $selectedField;
 
             Cards::resetCards($selectedField);
 
@@ -60,7 +62,8 @@ include_once('includes/header.inc.php'); ?>
             <?php if($c["amountOfCollectedCards"] < 20): ?>
 
                 <form action="" method="post" id="reset_collection" class="reset_collection">
-                    <input type="submit" name="reset_collection<?php echo $c["name"] ?>" value="<?php echo $c["name"] ?>">
+                    <input type="hidden" name="<?php echo $c["themeID"] ?>" value="<?php echo $c["themeID"] ?>">
+                    <button>RESET</button>
                 </form>
 
             <?php endif; ?>
