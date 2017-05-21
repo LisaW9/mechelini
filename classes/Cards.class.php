@@ -79,6 +79,12 @@ abstract class Cards
         $statement->bindValue(":id", $p_iId);
         $statement->bindValue(":trade", $p_iTrade);
         $statement->execute();
+        if($p_iTrade == 1){
+            Trade::addTradeCard($p_iId);
+        } else {
+            Trade::removeTradeCard($p_iId);
+        }
+
     }
 
     public static function getClosedCards()
