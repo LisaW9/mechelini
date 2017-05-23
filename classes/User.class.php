@@ -111,6 +111,16 @@ class User
         $statement->execute();
         $result = $statement->fetch(PDO::FETCH_ASSOC);
 
+        $getAmountOfThemes = $conn->prepare("select * from themes");
+        $getAmountOfThemes->execute();
+
+        foreach ($getAmountOfThemes as $g):
+            $setStateTheme = $conn->prepare("insert into completed (user_id, theme_id, amount) values (:user_id, :theme_id, 0)");
+            $setStateTheme->bindValue(':user_id', $_SESSION['id']);
+            $setStateTheme->bindValue(':theme_id', $g["id"]);
+            $setStateTheme->execute();
+        endforeach;
+
         session_start();
         $_SESSION["id"] = $result["id"];
         $_SESSION['user'] = $this->m_email;

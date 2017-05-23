@@ -106,12 +106,13 @@ abstract class Cards
     public static function getCardsProgress()
     {
         $conn = Db::getInstance();
-        $stmnt = $conn->prepare("SELECT t.name, c.theme_ID as themeID, count(DISTINCT uc.card_id) as amountOfCollectedCards, uc.user_id
+        $stmnt = $conn->prepare("SELECT t.name, c.theme_ID as themeID, count(DISTINCT uc.card_id) as amountOfCollectedCards, uc.user_id, com.amount as completedAmount
                                 FROM themes t 
                                 INNER JOIN cards c on t.id = c.theme_ID
                                 inner join user_cards uc on c.id = uc.card_id
+                                inner join completed com on uc.user_id = com.user_id and c.theme_ID = com.theme_id
                                 WHERE uc.user_id = :user_ID
-                                GROUP BY theme_ID");
+                                GROUP BY com.id");
         $stmnt->bindValue(':user_ID', $_SESSION['id']);
         $stmnt->execute();
         $cardProgress = $stmnt->fetchAll(PDO::FETCH_ASSOC);

@@ -25,10 +25,7 @@ foreach ($cardProgress as $c):
         if (!empty($_POST[$c["themeID"]])) {
             $selectedField = $_POST[$c["themeID"]];
 
-            echo $selectedField;
-
             Cards::resetCards($selectedField);
-
         }
     } catch (Exception $e) {
         $error = $e->getMessage();
@@ -59,12 +56,13 @@ include_once('includes/header.inc.php'); ?>
         <div class="progress_block <?php if($c["theme_ID"]% 2 == 0){echo "even";}else{echo "odd";}?>">
             <h1><?php echo $c["name"] ?></h1>
             <h2>je hebt <?php echo $c["amountOfCollectedCards"] ?> van de 20 kaarten voor deze categorie</h2>
+            <h3>je hebt deze set <?php echo $c["completedAmount"] ?> keer gecompleet </h3>
 
-            <?php if($c["amountOfCollectedCards"] < 20): ?>
+            <?php if($c["amountOfCollectedCards"] >= 20): ?>
 
                 <form action="" method="post" id="reset_collection" class="reset_collection">
                     <input type="hidden" name="<?php echo $c["themeID"] ?>" value="<?php echo $c["themeID"] ?>">
-                    <button>RESET</button>
+                    <input type="submit" value="reset progress" class="btn_reset">
                 </form>
 
             <?php endif; ?>
