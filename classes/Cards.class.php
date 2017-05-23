@@ -106,11 +106,11 @@ abstract class Cards
     public static function getCardsProgress()
     {
         $conn = Db::getInstance();
-        $stmnt = $conn->prepare("SELECT t.name, c.theme_ID as themeID, count(DISTINCT uc.card_id) as amountOfCollectedCards, uc.user_id, com.amount as completedAmount
+        $stmnt = $conn->prepare("SELECT t.name as themeName, c.theme_ID as themeID, count(DISTINCT uc.card_id) as amountOfCollectedCards, uc.user_id as userCardID, com.amount as completedAmount
                                 FROM themes t 
-                                INNER JOIN cards c on t.id = c.theme_ID
-                                inner join user_cards uc on c.id = uc.card_id
-                                inner join completed com on uc.user_id = com.user_id and c.theme_ID = com.theme_id
+                                left JOIN cards c on t.id = c.theme_ID
+                                left join user_cards uc on c.id = uc.card_id
+                                left join completed com on uc.user_id = com.user_id and c.theme_ID = com.theme_id
                                 WHERE uc.user_id = :user_ID
                                 GROUP BY com.id");
         $stmnt->bindValue(':user_ID', $_SESSION['id']);
@@ -129,10 +129,26 @@ abstract class Cards
             $stmnt = $conn->prepare("UPDATE completed SET amount = (amount + 1) WHERE user_id = :user_id and theme_id = $themeField");
             $stmnt->bindValue(':user_id', $_SESSION['id']);
             $stmnt->execute();
+
+            $stmntDeleteCards = $conn->prepare("DELETE uc.*
+                                                FROM user_cards uc
+                                                left join cards c on c.id = uc.card_id
+                                                left join themes t on t.id = c.theme_ID
+                                                where user_id = :user_id and t.id = $themeField");
+            $stmntDeleteCards->bindValue(':user_id', $_SESSION['id']);
+            $stmntDeleteCards->execute();
         } else {
             $stmnt = $conn->prepare("insert into completed (user_id, theme_id, amount) values (:user_id, $themeField, 1)");
             $stmnt->bindValue(':user_id', $_SESSION['id']);
             $stmnt->execute();
+
+            $stmntDeleteCards = $conn->prepare("DELETE uc.*
+                                                FROM user_cards uc
+                                                left join cards c on c.id = uc.card_id
+                                                left join themes t on t.id = c.theme_ID
+                                                where user_id = :user_id and t.id = $themeField");
+            $stmntDeleteCards->bindValue(':user_id', $_SESSION['id']);
+            $stmntDeleteCards->execute();
         }
 
     }

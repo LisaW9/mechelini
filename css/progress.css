@@ -26,6 +26,10 @@
     background-color: #dd3736;
 }
 
+.gray{
+    background-color: gray;
+}
+
 .odd .btn_reset{
     background-color: #7d2423;
     color: white;
@@ -42,4 +46,18 @@
     padding: 5px;
     margin-top: 20px;
     font-family: sans-serif;
+}
+
+.football_layout{
+    display: flex;
+    margin-top: 10px;
+    justify-content: center;
+}
+
+.footbal{
+    flex-direction: row;
+    background-image: url("../img/icons/football.svg");
+    width: 30px;
+    height: 30px;
+    margin: 5px;
 }
