@@ -4,13 +4,21 @@ if (!isset($_SESSION['id'])) {
     header('location: login.php');
 }
 
-if($_SESSION['cardsReceived']){
-    header('location: open.php');
-}
-
 spl_autoload_register(function ($class) {
     include_once("classes/" . $class . ".class.php");
 });
+$trader = '';
+$receiver = '';
+
+if (isset($_GET['trade'])) {
+    foreach ($_SESSION['cards'] as $c) {
+        if ($_GET['trade'] == $c->ucId) {
+            $trader = $c;
+            break;
+        }
+    }
+}
+
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -19,39 +27,30 @@ spl_autoload_register(function ($class) {
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="mobile-web-app-capable" content="yes">
-    <title>Kaarten</title>
+    <title>Ruilen</title>
 
     <link rel="stylesheet" type="text/css" href="css/reset.css">
     <link rel="stylesheet" type="text/css" href="css/main_style.css">
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/kaart.css">
-    <link rel="stylesheet" type="text/css" href="css/kaarten.css">
-    <link rel="stylesheet" type="text/css" href="css/filters.css">
+    <link rel="stylesheet" type="text/css" href="css/kaartDetail.css">
 
 </head>
 <body>
 
-<?php $page = 'Kaarten';
-include_once('includes/header.inc.php'); ?>
 <div id="container">
-    <?php include_once('includes/filters.inc.php'); ?>
-
-    <div class="kaarten"></div>
-
+    <div class="close">X</div>
+    <div class="toTrade">
+        <div class="kaart give"
+             style="background-image: url('img/kaarten/<?php echo isset($_GET['trade']) ? $trader->image : 'closed.svg' ?>');"></div>
+        <div class="kaart receive"
+             style="background-image: url('img/kaarten/<?php echo $receiver->image ?>');"></div>
+    </div>
+    <div class="trade">
+        <button class="tradeBtn">Trade!</button>
+    </div>
 </div>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
-<script type="text/javascript" src="js/transition_back.js"></script>
-<script type="text/javascript" src="js/filter.js"></script>
-<script>
-    //Kaarten ophalen
-    filter('abc');
-    // AJAX functie
-    function filter(filter) {
-        $.post('ajax/cards.php', {'filter': filter}, function (data) {
-            $(".kaarten").children().remove();
-            $(".kaarten").append(data);
-        });
-    }
-</script>
+<script type="text/javascript" src="js/detailRuilen.js"></script>
 </body>
 </html>

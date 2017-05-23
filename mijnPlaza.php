@@ -29,7 +29,7 @@ spl_autoload_register(function ($class) {
 
 </head>
 <body>
-<?php $page = 'Ruilplaza';
+<?php $page = 'Mijn Plaza';
 include_once('includes/header.inc.php'); ?>
 <div id="container">
     <?php include_once('includes/filters.inc.php'); ?>
@@ -45,7 +45,7 @@ include_once('includes/header.inc.php'); ?>
     filter('abc');
     // AJAX functie
     function filter(filter) {
-        $.post('ajax/tradingCards.php', {'filter': filter}, function (data) {
+        $.post('ajax/tradingCards.php', {'mijnFilter': filter}, function (data) {
             $(".ruilkaarten").children().remove();
             $(".ruilkaarten").append(data);
         });

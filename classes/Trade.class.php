@@ -28,6 +28,7 @@ class Trade
         $_SESSION['tradingCards'] = [];
         $conn = Db::getInstance();
         $statement = $conn->prepare($query);
+        $statement->bindValue(':user_id', $_SESSION['id']);
         $statement->execute();
         while ($result = $statement->fetch(PDO::FETCH_OBJ)) {
             array_push($_SESSION['tradingCards'], $result);

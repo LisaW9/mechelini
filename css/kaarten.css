@@ -19,34 +19,10 @@
     margin: auto;
 }
 .shadow{
-    width: 150px;
+    width: 100px;
     height: 150px;
     background-color: #900a0c;
     border-radius: 60%;
     filter: blur(30px);
     margin: auto;
-}
-
-.filters{
-    position: absolute;
-    z-index: 1000;
-    width: 150px;
-    top: 80px;
-    right: 10px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.filter{
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background-color: white;
-    border: 3px solid #bf934a;
-    color: #bf934a;
-    text-align: center;
-    padding-top: 8px;
-    font-weight: bold;
-    right: 10px;
-    position: absolute;
 }

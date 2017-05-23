@@ -111,22 +111,34 @@ class User
         $statement->execute();
         $result = $statement->fetch(PDO::FETCH_ASSOC);
 
-        $getAmountOfThemes = $conn->prepare("select * from themes");
-        $getAmountOfThemes->execute();
-        $resultOfThemes = $getAmountOfThemes->fetch(PDO::FETCH_ASSOC);
+        session_start();
+        $_SESSION["id"] = $result["id"];
+        $_SESSION['user'] = $this->m_email;
 
+        $this->getAmountOfThemes();
+        Cards::getRandomCards(5);
+
+        header("Location: index.php");
+    }
+
+    public function getAmountOfThemes()
+    {
+        $conn = Db::getInstance();
+        $statement = $conn->prepare("SELECT * FROM themes");
+        $statement->execute();
+        $resultOfThemes = $statement->fetchAll(PDO::FETCH_ASSOC);
+        $this->saveCompleted($resultOfThemes);
+    }
+
+    public function saveCompleted($resultOfThemes)
+    {
+        $conn = Db::getInstance();
         foreach ($resultOfThemes as $g):
-            $setStateTheme = $conn->prepare("insert into completed (user_id, theme_id, amount) values (:user_id, :theme_id, 0)");
+            $setStateTheme = $conn->prepare("INSERT INTO completed (user_id, theme_id) VALUES (:user_id, :theme_id)");
             $setStateTheme->bindValue(':user_id', $_SESSION['id']);
             $setStateTheme->bindValue(':theme_id', $g["id"]);
             $setStateTheme->execute();
         endforeach;
-
-        session_start();
-        $_SESSION["id"] = $result["id"];
-        $_SESSION['user'] = $this->m_email;
-        Cards::getRandomCards(5);
-        header("Location: index.php");
     }
 
 

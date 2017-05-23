@@ -21,8 +21,8 @@ $(document).ready(function () {
                 $('.second').hide();
             });
 
-            if ($(this).hasClass('amount')) {
-                filter('amount');
+            if ($(this).hasClass('trade')) {
+                filter('trade');
             } else if ($(this).hasClass('abc')) {
                 filter('abc');
             } else if ($(this).hasClass('time')) {

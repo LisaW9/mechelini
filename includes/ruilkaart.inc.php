@@ -1,4 +1,4 @@
-<div class="ruilkaart">
+ <div class="ruilkaart" id="<?php echo $result->tradeId; ?>">
     <?php include('kaart.inc.php'); ?>
     <div class="info">
         <div class="user">

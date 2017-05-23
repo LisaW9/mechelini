@@ -1,6 +1,6 @@
 .ruilkaart {
     width: 50%;
-    height: 350px;
+    height: 250px;
     display: flex;
     flex-direction: column;
 }
@@ -9,7 +9,7 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    height: 40%;
+    font-size: 0.7em;
 }
 
 .user, .date, .rarity {
@@ -27,6 +27,7 @@
     border-radius: 50%;
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: center;
 }
 
 .dateIcon {
