@@ -151,5 +151,7 @@ abstract class Cards
             $stmntDeleteCards->execute();
         }
 
+        Cards::getRandomCards(2);
+
     }
 }
