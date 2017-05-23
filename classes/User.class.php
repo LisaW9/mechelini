@@ -180,4 +180,14 @@ class User
         $user = $stment->fetch(PDO::FETCH_OBJ);
         return $user;
     }
+
+    public static function getUnlocks($p_iId)
+    {
+        $conn = Db::getInstance();
+        $stment = $conn->prepare("SELECT sum(amount) as unlocks FROM completed WHERE user_id = :id");
+        $stment->bindValue(':id', $p_iId);
+        $stment->execute();
+        $unlocks = $stment->fetch(PDO::FETCH_OBJ);
+        return $unlocks;
+    }
 }

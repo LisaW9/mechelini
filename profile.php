@@ -16,6 +16,14 @@ try {
     echo $e->getMessage();
 }
 
+try {
+    //PROFILE
+    $unlocks = User::getUnlocks($_SESSION['id']);
+
+} catch (Exception $e) {
+    echo $e->getMessage();
+}
+
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -39,7 +47,7 @@ include_once('includes/header.inc.php'); ?>
         <div class="profile_data">
             <h1><?php echo $user->firstName . ' ' . $user->lastName; ?></h1>
             <h2>ID:<?php echo $user->abbo_ID ?></h2>
-            <h2>Unlocks: </h2>
+            <h2>Unlocks:<?php echo $unlocks->unlocks ?></h2>
         </div>
     </div>
 </div>

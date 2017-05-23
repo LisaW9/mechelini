@@ -48,7 +48,7 @@ endforeach;
     <title>progress van <?php echo $user->firstName; ?></title>
 </head>
 <body>
-<?php $page = 'Progress';
+<?php $page = 'Vooruitgang';
 include_once('includes/header.inc.php'); ?>
 <div id="container">
     <div class="progress">
