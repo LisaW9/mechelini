@@ -65,7 +65,7 @@ include_once('includes/header.inc.php'); ?>
                     <h1><?php echo $c["themeName"] ?></h1>
                     <h2>je hebt <?php echo $c["amountOfCollectedCards"] ?> van de 20 kaarten voor deze categorie</h2>
 
-                    <div class="football_layout"><?php for ($i=0; $i <= $c["completedAmount"]-1; $i++){ echo '<div class="footbal"></div>';} ?></div>
+                    <div class="football_layout"><?php for ($i=0; $i <= $c["completedAmount"]-1; $i++){ echo '<img src="img/icons/football.svg" alt="missing img" class="footbal">';} ?></div>
 
                     <?php if($c["amountOfCollectedCards"] >= 20): ?>
 
