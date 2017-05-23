@@ -10,6 +10,13 @@ spl_autoload_register(function ($class) {
 $trader = '';
 $receiver = '';
 
+foreach ($_SESSION['tradingCards'] as $tc) {
+    if ($_GET['receive'] == $tc->tradeId) {
+        $receiver = $tc;
+        break;
+    }
+}
+
 if (isset($_GET['trade'])) {
     foreach ($_SESSION['cards'] as $c) {
         if ($_GET['trade'] == $c->ucId) {
@@ -34,6 +41,8 @@ if (isset($_GET['trade'])) {
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/kaart.css">
     <link rel="stylesheet" type="text/css" href="css/kaartDetail.css">
+    <link rel="stylesheet" type="text/css" href="css/ruilkaart.css">
+    <link rel="stylesheet" type="text/css" href="css/ruilen.css">
 
 </head>
 <body>
@@ -41,14 +50,65 @@ if (isset($_GET['trade'])) {
 <div id="container">
     <div class="close">X</div>
     <div class="toTrade">
-        <div class="kaart give"
-             style="background-image: url('img/kaarten/<?php echo isset($_GET['trade']) ? $trader->image : 'closed.svg' ?>');"></div>
-        <div class="kaart receive"
-             style="background-image: url('img/kaarten/<?php echo $receiver->image ?>');"></div>
+        <div class="trade">
+            <img src="img/kaarten/<?php echo isset($_GET['trade']) ? $trader->image : 'closed.svg' ?>" alt="trade">
+            <div class="info">
+                <div class="user">
+                    <?php $user = User::getProfile($_SESSION['id']); ?>
+                    <div class="profilePicture" style="background-image:url('img/userImages/<?php echo $user->image ?>');"></div>
+                    <p class="profileName"><?php echo $user->firstName.' '.$user->lastName ?></p>
+                </div>
+                <div class="date">
+                    <div class="dateIcon"></div>
+                    <p class="dateP"><?php echo $trader->date ?></p>
+                </div>
+                <div class="rarity">
+                    <p class="rarityTitle">RARITY</p>
+                    <p class="rarityP"><?php switch ($trader->rarity) {
+                            case 1:
+                                echo 'Common';
+                                break;
+                            case 2:
+                                echo 'Rare';
+                                break;
+                            case 3:
+                                echo 'Very rare';
+                                break;
+                        } ?></p>
+                </div>
+            </div>
+        </div>
+
+        <div class="receive">
+            <img src="img/kaarten/<?php echo $receiver->image ?>" alt="receive">
+            <div class="info">
+                <div class="user">
+                    <?php $user = User::getProfile($receiver->user_id); ?>
+                    <div class="profilePicture" style="background-image:url('img/userImages/<?php echo $user->image ?>');"></div>
+                    <p class="profileName"><?php echo $user->firstName.' '.$user->lastName ?></p>
+                </div>
+                <div class="date">
+                    <div class="dateIcon"></div>
+                    <p class="dateP"><?php echo $receiver->date ?></p>
+                </div>
+                <div class="rarity">
+                    <p class="rarityTitle">RARITY</p>
+                    <p class="rarityP"><?php switch ($receiver->rarity) {
+                            case 1:
+                                echo 'Common';
+                                break;
+                            case 2:
+                                echo 'Rare';
+                                break;
+                            case 3:
+                                echo 'Very rare';
+                                break;
+                        } ?></p>
+                </div>
+            </div>
+        </div>
     </div>
-    <div class="trade">
-        <button class="tradeBtn">Trade!</button>
-    </div>
+    <button class="tradeBtn">Trade!</button>
 </div>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="js/detailRuilen.js"></script>
