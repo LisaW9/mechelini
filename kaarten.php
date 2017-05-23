@@ -36,7 +36,7 @@ include_once('includes/header.inc.php'); ?>
 <div id="container">
     <?php include_once('includes/filters.inc.php'); ?>
 
-    <div class="kaarten"></div>
+    <div class="kaarten <?php if(isset($_GET['trade'])) echo 'trading'; ?>" <?php if(isset($_GET['trade'])) echo "id='".$_GET['trade']."'"; ?>></div>
 
 </div>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>

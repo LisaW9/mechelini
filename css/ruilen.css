@@ -26,8 +26,14 @@ img{
     text-align: right;
 }
 
-.user, .date, .rarity{
+.user, .amount, .rarity{
     padding: 10px 0;
+    width: 70%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 5px;
 }
 
 .tradeBtn{

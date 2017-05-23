@@ -24,6 +24,14 @@ if (isset($_GET['trade'])) {
             break;
         }
     }
+};
+
+if (isset($_POST['trade'])) {
+    if (isset($_GET['trade'])) {
+        //trade
+    } else{
+        echo 'Please select a card to trade!';
+    }
 }
 
 ?><!doctype html>
@@ -55,12 +63,15 @@ if (isset($_GET['trade'])) {
             <div class="info">
                 <div class="user">
                     <?php $user = User::getProfile($_SESSION['id']); ?>
-                    <div class="profilePicture" style="background-image:url('img/userImages/<?php echo $user->image ?>');"></div>
-                    <p class="profileName"><?php echo $user->firstName.' '.$user->lastName ?></p>
+                    <div class="profilePicture"
+                         style="background-image:url('img/userImages/<?php echo $user->image ?>');"></div>
+                    <p class="profileName"><?php echo $user->firstName . ' ' . $user->lastName ?></p>
                 </div>
-                <div class="date">
-                    <div class="dateIcon"></div>
-                    <p class="dateP"><?php echo $trader->date ?></p>
+                <div class="amount">
+                    <p>AMOUNT</p>
+                    <p><?php
+                        Cards::countCards($trader->id);
+                        ?></p>
                 </div>
                 <div class="rarity">
                     <p class="rarityTitle">RARITY</p>
@@ -79,17 +90,20 @@ if (isset($_GET['trade'])) {
             </div>
         </div>
 
-        <div class="receive">
+        <div class="receive" id="<?php echo $receiver->tradeId; ?>">
             <img src="img/kaarten/<?php echo $receiver->image ?>" alt="receive">
             <div class="info">
                 <div class="user">
                     <?php $user = User::getProfile($receiver->user_id); ?>
-                    <div class="profilePicture" style="background-image:url('img/userImages/<?php echo $user->image ?>');"></div>
-                    <p class="profileName"><?php echo $user->firstName.' '.$user->lastName ?></p>
+                    <div class="profilePicture"
+                         style="background-image:url('img/userImages/<?php echo $user->image ?>');"></div>
+                    <p class="profileName"><?php echo $user->firstName . ' ' . $user->lastName ?></p>
                 </div>
-                <div class="date">
-                    <div class="dateIcon"></div>
-                    <p class="dateP"><?php echo $receiver->date ?></p>
+                <div class="amount">
+                    <p>AMOUNT</p>
+                    <p><?php
+                        Cards::countCards($receiver->cardId);
+                        ?></p>
                 </div>
                 <div class="rarity">
                     <p class="rarityTitle">RARITY</p>
@@ -108,9 +122,14 @@ if (isset($_GET['trade'])) {
             </div>
         </div>
     </div>
-    <button class="tradeBtn">Trade!</button>
+    <button type='submit' class="tradeBtn" value="trade">Trade!</button>
 </div>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="js/detailRuilen.js"></script>
+<script>
+    $('.close').on('click', function () {
+        window.location.href = '/ruilplaza.php';
+    })
+</script>
 </body>
 </html>
