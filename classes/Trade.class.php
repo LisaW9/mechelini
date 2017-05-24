@@ -36,4 +36,34 @@ class Trade
             include("../includes/ruilkaart.inc.php");
         };
     }
+
+    public static function tradeCards($traderCard, $receiverCard, $receiverUser){
+        $conn = Db::getInstance();
+
+        for($i = 1; $i<=2; $i++){
+            $user = "";
+            $card = "";
+            if($i == 1){
+                $user = $_SESSION['id'];
+                $card = $receiverCard;
+            } else{
+                $user = $receiverUser;
+                $card = $traderCard;
+            }
+            var_dump($user);
+            var_dump($card);
+            $statement = $conn->prepare('UPDATE user_cards SET user_id = :user WHERE id = :card');
+            $statement->bindValue(':user', $user);
+            $statement->bindValue(':card', $card);
+            $statement->execute();
+
+            $statement2 = $conn->prepare('DELETE FROM trade_cards WHERE userCard_id = :card');
+            $statement2->bindValue(':card', $card);
+            $statement2->execute();
+            var_dump($conn->errorInfo());
+        }
+
+
+
+    }
 }

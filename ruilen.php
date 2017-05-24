@@ -28,7 +28,7 @@ if (isset($_GET['trade'])) {
 
 if (isset($_POST['trade'])) {
     if (isset($_GET['trade'])) {
-        //trade
+        Trade::tradeCards($trader->ucId, $receiver->userCard_id, $receiver->user_id);
     } else{
         echo 'Please select a card to trade!';
     }
@@ -122,7 +122,10 @@ if (isset($_POST['trade'])) {
             </div>
         </div>
     </div>
-    <button type='submit' class="tradeBtn" value="trade">Trade!</button>
+    <form action="" method="post">
+        <button type='submit' class="tradeBtn" name="trade">Trade!</button>
+    </form>
+
 </div>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="js/detailRuilen.js"></script>
