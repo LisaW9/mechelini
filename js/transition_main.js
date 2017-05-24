@@ -111,7 +111,7 @@ $(document).ready(function () {
             opacity: '0'
         });
         setTimeout(function () {
-            window.location.href = "";
+            window.location.href = "/notfound.php";
         }, 1000);
     });
 

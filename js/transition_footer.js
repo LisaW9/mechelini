@@ -4,7 +4,7 @@ $(document).ready(function () {
     });
 
     $(".snelRuilen").click(function () {
-        window.location.pathname = "/snelRuilen.php";
+        window.location.pathname = "/notfound.php";
     });
 
     $(".mijnPlaza").click(function () {
@@ -12,6 +12,6 @@ $(document).ready(function () {
     });
 
     $(".geschiedenis").click(function () {
-        window.location.pathname = "/geschiedenis.php";
+        window.location.pathname = "/notfound.php";
     });
 });
