@@ -20,7 +20,7 @@ spl_autoload_register(function ($class) {
     <link rel="stylesheet" type="text/css" href="css/main_style.css">
     <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" type="text/css" href="css/profile.css">
-    <title>profile van <?php echo $user->firstName; ?></title>
+    <title>profile van <?php echo htmlspecialchars($user->firstName); ?></title>
 </head>
 <body>
 <?php $page = 'Profile';

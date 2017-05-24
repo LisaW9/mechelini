@@ -65,17 +65,17 @@ if (isset($_POST['trade'])) {
                     <?php $user = User::getProfile($_SESSION['id']); ?>
                     <div class="profilePicture"
                          style="background-image:url('img/userImages/<?php echo $user->image ?>');"></div>
-                    <p class="profileName"><?php echo $user->firstName . ' ' . $user->lastName ?></p>
+                    <p class="profileName"><?php echo htmlspecialchars($user->firstName) . ' ' . htmlspecialchars($user->lastName) ?></p>
                 </div>
                 <div class="amount">
                     <p>AMOUNT</p>
                     <p><?php
-                        Cards::countCards($trader->id);
+                        Cards::countCards(htmlspecialchars($trader->id));
                         ?></p>
                 </div>
                 <div class="rarity">
                     <p class="rarityTitle">RARITY</p>
-                    <p class="rarityP"><?php switch ($trader->rarity) {
+                    <p class="rarityP"><?php switch (htmlspecialchars($trader->rarity)) {
                             case 1:
                                 echo 'Common';
                                 break;
@@ -90,24 +90,24 @@ if (isset($_POST['trade'])) {
             </div>
         </div>
 
-        <div class="receive" id="<?php echo $receiver->tradeId; ?>">
-            <img src="img/kaarten/<?php echo $receiver->image ?>" alt="receive">
+        <div class="receive" id="<?php echo htmlspecialchars($receiver->tradeId); ?>">
+            <img src="img/kaarten/<?php echo htmlspecialchars($receiver->image) ?>" alt="receive">
             <div class="info">
                 <div class="user">
-                    <?php $user = User::getProfile($receiver->user_id); ?>
+                    <?php $user = User::getProfile(htmlspecialchars($receiver->user_id)); ?>
                     <div class="profilePicture"
                          style="background-image:url('img/userImages/<?php echo $user->image ?>');"></div>
-                    <p class="profileName"><?php echo $user->firstName . ' ' . $user->lastName ?></p>
+                    <p class="profileName"><?php echo htmlspecialchars($user->firstName) . ' ' . htmlspecialchars($user->lastName) ?></p>
                 </div>
                 <div class="amount">
                     <p>AMOUNT</p>
                     <p><?php
-                        Cards::countCards($receiver->cardId);
+                        Cards::countCards(htmlspecialchars($receiver->cardId));
                         ?></p>
                 </div>
                 <div class="rarity">
                     <p class="rarityTitle">RARITY</p>
-                    <p class="rarityP"><?php switch ($receiver->rarity) {
+                    <p class="rarityP"><?php switch (htmlspecialchars($receiver->rarity)) {
                             case 1:
                                 echo 'Common';
                                 break;

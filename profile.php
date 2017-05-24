@@ -43,11 +43,11 @@ try {
 include_once('includes/header.inc.php'); ?>
 <div id="container">
     <div class="profile">
-        <img src="img/userImages/<?php echo $user->image ?>" alt="<?php echo 'profielfoto van ' . $user->firstName . ' ' . $user->lastName . ' is missing'; ?>" class="profile_img">
+        <img src="img/userImages/<?php echo htmlspecialchars($user->image) ?>" alt="<?php echo 'profielfoto van ' . htmlspecialchars($user->firstName) . ' ' . htmlspecialchars($user->lastName) . ' is missing'; ?>" class="profile_img">
         <div class="profile_data">
-            <h1><?php echo $user->firstName . ' ' . $user->lastName; ?></h1>
-            <h2>ID:<?php echo $user->abbo_ID ?></h2>
-            <h2>Unlocks:<?php echo $unlocks->unlocks ?></h2>
+            <h1><?php echo htmlspecialchars($user->firstName) . ' ' . htmlspecialchars($user->lastName); ?></h1>
+            <h2>ID:<?php echo htmlspecialchars($user->abbo_ID) ?></h2>
+            <h2>Unlocks:<?php echo htmlspecialchars($unlocks->unlocks) ?></h2>
         </div>
     </div>
 </div>

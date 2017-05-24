@@ -4,5 +4,5 @@
         <div class="backArrow"></div>
     </div>
     </a>
-    <h1><?php echo $page; ?></h1>
+    <h1><?php echo htmlspecialchars($page); ?></h1>
 </div>

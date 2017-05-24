@@ -1,13 +1,13 @@
- <div class="ruilkaart" id="<?php echo $result->tradeId; ?>">
+ <div class="ruilkaart" id="<?php echo htmlspecialchars($result->tradeId); ?>">
     <?php include('kaart.inc.php'); ?>
     <div class="info">
         <div class="user">
             <div class="profilePicture" style="background-image:url('img/userImages/<?php echo $user->image ?>');"></div>
-            <p class="profileName"><?php echo $user->firstName.' '.$user->lastName ?></p>
+            <p class="profileName"><?php echo htmlspecialchars($user->firstName).' '.htmlspecialchars($user->lastName) ?></p>
         </div>
         <div class="date">
             <div class="dateIcon"></div>
-            <p class="dateP"><?php echo $result->date ?></p>
+            <p class="dateP"><?php echo htmlspecialchars($result->date) ?></p>
         </div>
         <div class="rarity">
             <p class="rarityTitle">RARITY</p>

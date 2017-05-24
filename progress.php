@@ -53,24 +53,24 @@ include_once('includes/header.inc.php'); ?>
 <div id="container">
     <div class="progress">
         <?php foreach ($cardProgress as $c):?>
-            <?php if($c["themeName"] == null || $c["themeID"] == null || $c["completedAmount"] == null || $c["userCardID"] == null || $c["amountOfCollectedCards"] == null): ?>
+            <?php if(htmlspecialchars($c["themeName"]) == null || htmlspecialchars($c["themeID"]) == null || htmlspecialchars($c["completedAmount"]) == null || htmlspecialchars($c["userCardID"]) == null || htmlspecialchars($c["amountOfCollectedCards"]) == null): ?>
             <div class="progress_block gray">
                 <h1>NOT UNLOCKED YET</h1>
 
             </div>
             <?php endif; ?>
 
-            <?php if($c["themeName"] != null || $c["themeID"] != null || $c["completedAmount"] != null || $c["userCardID"] != null || $c["amountOfCollectedCards"] != null): ?>
+            <?php if(htmlspecialchars($c["themeName"]) != null || htmlspecialchars($c["themeID"]) != null || htmlspecialchars($c["completedAmount"]) != null || htmlspecialchars($c["userCardID"]) != null || htmlspecialchars($c["amountOfCollectedCards"]) != null): ?>
                 <div class="progress_block <?php if($c["theme_ID"]% 2 == 0){echo "even";}else{echo "odd";}?>">
                     <h1><?php echo $c["themeName"] ?></h1>
-                    <h2>je hebt <?php echo $c["amountOfCollectedCards"] ?> van de 20 kaarten voor deze categorie</h2>
+                    <h2>je hebt <?php echo htmlspecialchars($c["amountOfCollectedCards"]) ?> van de 20 kaarten voor deze categorie</h2>
 
                     <div class="football_layout"><?php for ($i=0; $i <= $c["completedAmount"]-1; $i++){ echo '<img src="img/icons/football.svg" alt="missing img" class="footbal">';} ?></div>
 
-                    <?php if($c["amountOfCollectedCards"] >= 20): ?>
+                    <?php if(htmlspecialchars($c["amountOfCollectedCards"]) >= 20): ?>
 
                         <form action="" method="post" id="reset_collection" class="reset_collection">
-                            <input type="hidden" name="<?php echo $c["themeID"] ?>" value="<?php echo $c["themeID"] ?>">
+                            <input type="hidden" name="<?php echo htmlspecialchars($c["themeID"]) ?>" value="<?php echo htmlspecialchars($c["themeID"]) ?>">
                             <input type="submit" value="reset progress" class="btn_reset">
                         </form>
 

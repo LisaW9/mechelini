@@ -49,7 +49,7 @@
 
 <div id="container-form">
         <div class="login-form">
-            <p class="error"><?php echo $error ?></p>
+            <p class="error"><?php echo htmlspecialchars($error) ?></p>
         <form action="" method="post" id="register">
             <label for="firstName">VOORNAAM</label>
             <input type="text" class="input profile_icon" id="firstName" name="firstName">
