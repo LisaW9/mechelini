@@ -57,6 +57,21 @@ abstract class Cards
         while ($result = $statement->fetch(PDO::FETCH_OBJ)) {
             array_push($_SESSION['cards'], $result);
             echo "<div class='kaartDiv'>";
+            include("../includes/kaartProgress.inc.php");
+            echo "</div>";
+        };
+    }
+
+    public static function getCardCategories($query)
+    {
+        unset($_SESSION['cards']);
+        $_SESSION['cards'] = [];
+        $conn = Db::getInstance();
+        $statement = $conn->prepare($query);
+        $statement->execute();
+        while ($result = $statement->fetch(PDO::FETCH_OBJ)) {
+            array_push($_SESSION['cards'], $result);
+            echo "<div class='kaartDiv'>";
             include("../includes/kaart.inc.php");
             echo "</div>";
         };

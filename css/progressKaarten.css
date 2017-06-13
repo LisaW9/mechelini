@@ -1,0 +1,28 @@
+.kaarten {
+    width: 100%;
+    height: 90vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    overflow: scroll;
+}
+
+.kaartDiv {
+    width: 50%;
+    height: 150px;
+    margin: 20px 0;
+}
+
+.kaart {
+    width: 100%;
+    height: 100%;
+    margin: auto;
+}
+.shadow{
+    width: 100px;
+    height: 150px;
+    background-color: #900a0c;
+    border-radius: 60%;
+    filter: blur(30px);
+    margin: auto;
+}

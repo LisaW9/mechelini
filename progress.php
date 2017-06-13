@@ -62,8 +62,10 @@ include_once('includes/header.inc.php'); ?>
 
             <?php if(htmlspecialchars($c["themeName"]) != null || htmlspecialchars($c["themeID"]) != null || htmlspecialchars($c["completedAmount"]) != null || htmlspecialchars($c["userCardID"]) != null || htmlspecialchars($c["amountOfCollectedCards"]) != null): ?>
                 <div class="progress_block <?php if($c["theme_ID"]% 2 == 0){echo "even";}else{echo "odd";}?>">
+                    <a href="progressSpecific.php" class="progress_link">
                     <h1><?php echo $c["themeName"] ?></h1>
                     <h2>je hebt <?php echo htmlspecialchars($c["amountOfCollectedCards"]) ?> van de 20 kaarten voor deze categorie</h2>
+                    </a>
 
                     <div class="football_layout"><?php for ($i=0; $i <= $c["completedAmount"]-1; $i++){ echo '<img src="img/icons/football.svg" alt="missing img" class="footbal">';} ?></div>
 
