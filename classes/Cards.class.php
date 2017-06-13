@@ -57,7 +57,7 @@ abstract class Cards
         while ($result = $statement->fetch(PDO::FETCH_OBJ)) {
             array_push($_SESSION['cards'], $result);
             echo "<div class='kaartDiv'>";
-            include("../includes/kaartProgress.inc.php");
+            include("../includes/kaart.inc.php");
             echo "</div>";
         };
     }
@@ -72,7 +72,7 @@ abstract class Cards
         while ($result = $statement->fetch(PDO::FETCH_OBJ)) {
             array_push($_SESSION['cards'], $result);
             echo "<div class='kaartDiv'>";
-            include("../includes/kaart.inc.php");
+            include("../includes/kaartProgress.inc.php");
             echo "</div>";
         };
     }
