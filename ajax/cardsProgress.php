@@ -6,7 +6,7 @@ spl_autoload_register(function ($class) {
 
 if (isset($_POST["filter"])) {
 
-    $query = 'SELECT * FROM themes WHERE theme_ID = 1';
+    $query = 'SELECT * FROM cards WHERE theme_ID = 1';
 
 
     Cards::getCardCategories($query);
