@@ -31,7 +31,7 @@ class User
         if ($m_password == "") {
             throw new Exception("Password can not be empty");
         }
-        if (strlen($m_password) < 6) {
+        if (strlen($_POST["password"]) < 6) {
             throw new Exception("Password is too short");
         }
         if (!preg_match("#[a-zA-Z]+#", $m_password)) {

@@ -10,12 +10,13 @@ abstract class Location{
 
 
     public static function compareTime(){
+
         date_default_timezone_set('Europe/Brussels');
         $conn = Db::getInstance();
         $statement = $conn->prepare('SELECT * FROM matches');
         $statement->execute();
         while($res = $statement->fetch(PDO::FETCH_OBJ)){
-            if(($res->time <= date('H:i') || date('H:i') <= date('H:i', strtotime($res->time)+3600)) && date('Y-m-d') == $res->date){
+            if(($res->time <= date('H:i') || date('H:i') <= date('H:i', strtotime($res->time)+1800)) && date('Y-m-d') == $res->date){
                 Matches::checkIfAttended($res->id);
                 return 'Er is een match bezig!';
             }

@@ -6,7 +6,8 @@ spl_autoload_register(function ($class) {
 
 class Trade
 {
-    public static function addTradeCard($p_iCard_id){
+    public static function addTradeCard($p_iCard_id)
+    {
         $conn = Db::getInstance();
         $statement = $conn->prepare('INSERT INTO trade_cards (user_id, userCard_id, date) VALUES(:user_id, :card_id, :date)');
         $statement->bindValue(':user_id', $_SESSION['id']);
@@ -15,7 +16,8 @@ class Trade
         $statement->execute();
     }
 
-    public static function removeTradeCard($p_iCard_id){
+    public static function removeTradeCard($p_iCard_id)
+    {
         $conn = Db::getInstance();
         $statement = $conn->prepare('DELETE FROM trade_cards WHERE userCard_id = :card_id');
         $statement->bindValue(':card_id', $p_iCard_id);
@@ -37,22 +39,22 @@ class Trade
         };
     }
 
-    public static function tradeCards($traderCard, $receiverCard, $receiverUser){
+    public static function tradeCards($traderCard, $receiverCard, $receiverUser)
+    {
+
         $conn = Db::getInstance();
 
-        for($i = 1; $i<=2; $i++){
-            $user = "";
-            $card = "";
-            if($i == 1){
+        for ($i = 1; $i <= 2; $i++) {
+            if ($i == 1) {
                 $user = $_SESSION['id'];
                 $card = $receiverCard;
-            } else{
+
+            } else {
                 $user = $receiverUser;
                 $card = $traderCard;
             }
-            var_dump($user);
-            var_dump($card);
-            $statement = $conn->prepare('UPDATE user_cards SET user_id = :user WHERE id = :card');
+
+            $statement = $conn->prepare('UPDATE user_cards SET user_id = :user, trade = 0 WHERE id = :card');
             $statement->bindValue(':user', $user);
             $statement->bindValue(':card', $card);
             $statement->execute();
@@ -60,10 +62,9 @@ class Trade
             $statement2 = $conn->prepare('DELETE FROM trade_cards WHERE userCard_id = :card');
             $statement2->bindValue(':card', $card);
             $statement2->execute();
-            var_dump($conn->errorInfo());
         }
 
-
+        $_SESSION['tradeSuccess'] = true;
 
     }
 }

@@ -10,11 +10,13 @@ abstract class Matches
 
     public static function checkIfAttended($p_iMatchID)
     {
+
         $conn = Db::getInstance();
         $statement = $conn->prepare('SELECT * FROM user_matches WHERE match_id = :match_ID AND user_id = :user_ID');
         $statement->bindValue(':match_ID', $p_iMatchID);
         $statement->bindValue(':user_ID', $_SESSION['id']);
         $statement->execute();
+
         if ($statement->rowCount() > 0) {
             return 'User has already attended this match';
         } else {
@@ -30,6 +32,6 @@ abstract class Matches
         $statement->bindValue(':user_ID', $_SESSION['id']);
         $statement->bindValue(':match_ID', $p_iMatchID);
         $statement->execute();
-        Cards::getRandomCards(10);
+        Cards::getRandomCards(3);
     }
 }

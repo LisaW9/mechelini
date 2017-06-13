@@ -1,5 +1,6 @@
 $(document).ready(function () {
     var alertDiv = $('.alert');
+    alertDiv.show();
     alertDiv.animate({
         bottom: '0'
     }, 1000).delay(500);
@@ -14,5 +15,15 @@ $(document).ready(function () {
         }, 1000, function () {
             alertDiv.hide();
         });
-    })
+    });
+
+    $('.tradeLink').on('click', function () {
+        window.location.href = '/ruilplaza.php';
+    });
+
+    $('.cardsLink').on('click', function () {
+        window.location.href = '/kaarten.php';
+    });
+
+
 });

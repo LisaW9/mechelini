@@ -25,7 +25,7 @@ spl_autoload_register(function ($class) {
 <body>
 <?php $page = 'Profile';
 include_once('includes/header.inc.php'); ?>
-<div id="container">
+<div id="container" style="height:100vh;">
     <h1>Sorry, this feature is not in the demo</h1>
 </div>
 </body>

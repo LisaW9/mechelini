@@ -30,7 +30,7 @@ if (isset($_POST['trade'])) {
     if (isset($_GET['trade'])) {
         Trade::tradeCards($trader->ucId, $receiver->userCard_id, $receiver->user_id);
     } else{
-        echo 'Please select a card to trade!';
+        $error = 'Please select a card to trade!';
     }
 }
 
@@ -57,6 +57,7 @@ if (isset($_POST['trade'])) {
 
 <div id="container">
     <div class="close">X</div>
+    <?php if (isset($error)) echo '<p class="error">'.$error.'</p>'; ?>
     <div class="toTrade">
         <div class="trade">
             <img src="img/kaarten/<?php echo isset($_GET['trade']) ? $trader->image : 'closed.svg' ?>" alt="trade">
@@ -126,10 +127,22 @@ if (isset($_POST['trade'])) {
         <button type='submit' class="tradeBtn" name="trade">Trade!</button>
     </form>
 
+    <div class="alert">
+        <h1>Je kaart is geruild!</h1>
+        <div class="links">
+            <a href="#" class="tradeLink">Verder ruilen</a>
+            <a href="#" class="cardsLink">Naar kaarten</a>
+        </div>
+    </div>
+
 </div>
 <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
 <script type="text/javascript" src="js/detailRuilen.js"></script>
-<script>
+<?php if ($_SESSION['tradeSuccess']) {
+echo '<script type="text/javascript" src="js/alert.js"></script>';
+$_SESSION['tradeSuccess'] = false;
+}
+?><script>
     $('.close').on('click', function () {
         window.location.href = '/ruilplaza.php';
     })

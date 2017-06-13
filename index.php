@@ -31,8 +31,8 @@ if ($_SESSION['loggedIn']) {
 }
 if ($_SESSION['cardsReceived']) {
     echo '<script type="text/javascript" src="js/alert.js"></script>';
-}?>
-<div id="container">
+}
+?><div id="container">
     <nav>
         <ul>
             <li><a href="#" class="menu_button_profile"><img src="img/icons/profile_icon.svg" alt="profile_icon">

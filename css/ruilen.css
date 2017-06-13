@@ -41,3 +41,24 @@ img{
     background-color: #CF3C3E;
     margin: auto;
 }
+
+.error{
+    width: 90vw;
+    padding-left: 15px;
+    line-height: 30px;
+    color: white;
+    background-color: #CF3C3E;
+    border-radius: 5px;
+    position: absolute;
+    text-align: center;
+    margin: auto;
+    top: 65px;
+    display: flex;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.alert {
+    background-color: #CF3C3E;
+    border-color: #7d252a;
+}
